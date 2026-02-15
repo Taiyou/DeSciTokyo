@@ -2,7 +2,7 @@ name: Sync Wiki
 
 on:
   push:
-    branches: [main, 'claude/**']
+    branches: [main]
     paths:
       - 'docs/wiki/**'
   workflow_dispatch:
@@ -16,11 +16,42 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Sync docs/wiki to GitHub Wiki
-        uses: Andrew-Chen-Wang/github-wiki-action@v4
-        env:
-          WIKI_DIR: docs/wiki
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_MAIL: github-actions[bot]@users.noreply.github.com
-          GH_NAME: github-actions[bot]
+      - name: Push docs/wiki to GitHub Wiki
+        run: |
+          # Configure git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Clone existing wiki (or init if empty)
+          WIKI_URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git"
+          if git clone "$WIKI_URL" /tmp/wiki 2>/dev/null; then
+            echo "Wiki repo cloned"
+          else
+            echo "Wiki repo empty or not accessible, initializing..."
+            mkdir -p /tmp/wiki
+            cd /tmp/wiki
+            git init
+            git checkout -b master
+            cd -
+          fi
+
+          # Remove old content (except .git)
+          find /tmp/wiki -maxdepth 1 -not -name '.git' -not -name '.' -exec rm -rf {} + 2>/dev/null || true
+
+          # Copy wiki content
+          cp -r docs/wiki/* /tmp/wiki/
+
+          # Commit and push
+          cd /tmp/wiki
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+          else
+            git commit -m "Sync wiki from docs/wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git remote add origin "$WIKI_URL" 2>/dev/null || git remote set-url origin "$WIKI_URL"
+            git push -u origin master --force
+            echo "Wiki synced successfully!"
+          fi
