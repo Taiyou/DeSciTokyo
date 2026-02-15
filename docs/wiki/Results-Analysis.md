@@ -8,7 +8,17 @@
 | TOC + PDCA | 54.23 | +6.6% | 0.47 (Review) |
 | AI-SciOps | 69.48 | +36.6% | 0.95 (Review) |
 
-## 図1: 累積研究出力（01_cumulative_output.png）
+```mermaid
+xychart-beta
+    title "戦略別パフォーマンス比較"
+    x-axis ["Baseline", "TOC+PDCA", "AI-SciOps"]
+    y-axis "総研究出力" 0 --> 80
+    bar [50.86, 54.23, 69.48]
+```
+
+## 図1: 累積研究出力
+
+![累積研究出力](images/01_cumulative_output.png)
 
 ### 読み方
 横軸がタイムステップ（0〜100）、縦軸が累積の研究出力です。3本の線が3つの戦略を表し、線の傾きが瞬時スループット（研究の生産速度）を示します。赤い破線はAI-SciOpsの4段階の境界です。
@@ -23,7 +33,9 @@
 
 4. **TOC+PDCAは控えめな改善（+6.6%）**: 産業管理手法だけでも改善は得られるが、AIなしでは限界があることを示しています。
 
-## 図2: システムスループット推移（02_system_throughput.png）
+## 図2: システムスループット推移
+
+![システムスループット推移](images/02_system_throughput.png)
 
 ### 読み方
 横軸がタイムステップ、縦軸が各ステップでのシステム出力（移動平均）。瞬時的なスループットの変動を捉えています。
@@ -36,10 +48,40 @@
 
 3. **AI-SciOpsはStep 60-70で一時的に低下した後、急上昇**: Stage 3での構造変更（不確実性削減）が短期的に混乱を招いた後、Stage 4のメタ最適化でスループットが1.0を超える水準に到達。この「一時的な低下→その後の急改善」パターンは、プロセス再構成の過渡的コストを示しており、重要な知見です。
 
-## 図3: ボトルネック分布（03_bottleneck_analysis.png）
+## 図3: ボトルネック分布
+
+![ボトルネック分布](images/03_bottleneck_analysis.png)
 
 ### 読み方
 3つの戦略それぞれについて、各プロセスが「ボトルネック（最もスループットが低いプロセス）」だった回数を棒グラフで表示。
+
+### ボトルネック移動の動態
+
+```mermaid
+graph TD
+    subgraph Baseline["Baseline: 固定ボトルネック"]
+        B_R["Review 100/100回"]
+        style B_R fill:#ef5350,stroke:#c62828,color:white
+    end
+
+    subgraph TOC["TOC+PDCA: ボトルネック移動"]
+        T_R["Review ~60回"]
+        T_E["Experiment ~30回"]
+        T_R -.->|"リソース集中→移動"| T_E
+        T_E -.->|"PDCAサイクル→復帰"| T_R
+        style T_R fill:#ef5350,stroke:#c62828,color:white
+        style T_E fill:#ff8a65,stroke:#e64a19
+    end
+
+    subgraph AI["AI-SciOps: 均衡化（分散）"]
+        A_R["Review"] ~~~ A_W["Writing"]
+        A_E["Experiment"] ~~~ A_A["Analysis"]
+        style A_R fill:#ff8a65,stroke:#e64a19
+        style A_W fill:#ffcc80,stroke:#FF9800
+        style A_E fill:#ffcc80,stroke:#FF9800
+        style A_A fill:#ffe0b2,stroke:#FFB74D
+    end
+```
 
 ### 発見
 
@@ -49,7 +91,9 @@
 
 3. **AI-SciOpsではボトルネックが分散**: Reviewが依然最多ですが、Writing、Experiment、Analysisにも分散。これは**全体的に均衡化された状態**を意味し、特定の一箇所だけが極端に遅いという状況が解消されています。
 
-## 図4: スループットヒートマップ（04_throughput_heatmap.png）
+## 図4: スループットヒートマップ
+
+![スループットヒートマップ](images/04_throughput_heatmap.png)
 
 ### 読み方
 プロセス（縦軸）×時間（横軸）のマトリクスで、色の濃さがスループットを表す。明るい色=低い、暗い/赤い色=高い。
@@ -62,7 +106,9 @@
 
 3. **AI-SciOpsは劇的な色の変化**: Stage遷移のたびに全体の色彩パターンが変化。特にStage 2（20-）でExperimentが暗くなり（スループット向上）、Stage 4（80-）でSurvey/Hypothesisが極端に暗くなる（並列化ブースト）のが明確に見えます。
 
-## 図5: WIP蓄積パターン（05_wip_accumulation.png）
+## 図5: WIP蓄積パターン
+
+![WIP蓄積パターン](images/05_wip_accumulation.png)
 
 ### 読み方
 6つのサブプロットが各プロセスの仕掛品（Work-In-Progress）量を示す。WIPが増え続けるプロセスは、処理能力が入力に追いつけていない（ボトルネック）ことを意味します。
@@ -75,7 +121,9 @@
 
 3. **AI-SciOpsはWIPが全プロセスで低く安定**: Stage 2の学習ベースのリソース配分により、WIPが蓄積しているプロセスに自動的にリソースを振り向けるため、大きな滞留が発生しません。これが**最大の差別化要因**です。
 
-## 図6: 総合比較（06_summary_comparison.png）
+## 図6: 総合比較
+
+![総合比較](images/06_summary_comparison.png)
 
 ### 読み方
 4つの最終指標（総出力、最終ボトルネックスループット、総手戻り、総失敗）を棒グラフで比較。
@@ -88,6 +136,28 @@
 
 3. **総手戻り・総失敗**: AI-SciOpsが最も低い。AI支援による不確実性削減と失敗率低下の効果です。
 
+## 核心的な知見マップ
+
+```mermaid
+mindmap
+  root((PoC 結果))
+    Baseline
+      Review恒常的BN
+      WIP無制限蓄積
+      出力 50.86
+    TOC+PDCA
+      BN移動現象
+      PDCA周期的変動
+      +6.6%改善
+    AI-SciOps
+      4段階で段階的加速
+      BN均衡化
+      WIP低く安定
+      +36.6%改善
+      Stage3で一時低下
+      Stage4で急加速
+```
+
 ## 核心的なテイクアウェイ
 
 | 知見 | 対応する論文の議論 |
@@ -98,3 +168,14 @@
 | Stage 3の構造変更後に一時的低下→改善 | Section 5: プロセスの枝刈り |
 | Stage 4のメタ最適化が最大の加速を生む | Section 5: メタプロセス再組織化 |
 | 段階的移行が効果的 | Section 5: 4段階フレームワーク |
+
+> **注**: 上記は基本実験（seed=42、3戦略比較）の結果です。メタ最適化（5バリアント）、AI優越世界、モンテカルロ統計検証の結果については、それぞれの専門ページを参照してください。
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [論文との対応関係](./Paper-Mapping.md) | [今後の発展](./Future-Work.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [AI優越世界での課題変化](./AI-Superior-World-Analysis.md)
+- [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)

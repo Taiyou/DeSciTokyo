@@ -4,25 +4,49 @@
 
 ## 1. 論文の全体構造とPoCの位置づけ
 
-```
-論文の構造:
-  Section 1: Introduction（科学プロセスの重要性）
-  Section 2: Theories of Management（PDCA, Agile, TOC）
-  Section 3: Process Management in the Age of AI
-    3.1: AI for Science
-    3.2: Process Management Issues
-  Section 4: Speculative Discussion
-    4.1: Research Automation（個別プロセスの最適化）
-    4.2: Metascience and Process Optimization（システム最適化）
-  Section 5: Four Steps of Change
-  Section 6: Conclusion
+```mermaid
+graph LR
+    subgraph 論文["📄 論文構造"]
+        S1["Sec 1: Introduction"]
+        S2["Sec 2: Management<br/>PDCA, Agile, TOC"]
+        S3["Sec 3: AI時代の管理"]
+        S31["3.1: AI for Science"]
+        S32["3.2: 管理課題"]
+        S4["Sec 4: Speculative"]
+        S41["4.1: 研究自動化"]
+        S42["4.2: メタサイエンス"]
+        S5["Sec 5: 4段階変化"]
+        S6["Sec 6: Conclusion"]
 
-PoCが検証する範囲:
-  ├── Section 2 → TOC+PDCA optimizer
-  ├── Section 3.2 → 人間ボトルネックメカニズム
-  ├── Section 4.1 → AI-SciOps Stage 1-3
-  └── Section 5 → AI-SciOps の4段階フレームワーク全体
+        S3 --> S31
+        S3 --> S32
+        S4 --> S41
+        S4 --> S42
+    end
+
+    subgraph PoC["🔬 PoC 実装"]
+        P2["TOC+PDCA<br/>Optimizer"]
+        P32["人間BNメカニズム"]
+        P41["AI-SciOps<br/>Stage 1-3"]
+        P5["4段階フレームワーク<br/>全体"]
+    end
+
+    S2 ==>|"実装"| P2
+    S32 ==>|"実装"| P32
+    S41 ==>|"実装"| P41
+    S5 ==>|"実装"| P5
+
+    style S2 fill:#bbdefb,stroke:#1976D2
+    style S32 fill:#bbdefb,stroke:#1976D2
+    style S41 fill:#bbdefb,stroke:#1976D2
+    style S5 fill:#bbdefb,stroke:#1976D2
+    style P2 fill:#c8e6c9,stroke:#388E3C
+    style P32 fill:#c8e6c9,stroke:#388E3C
+    style P41 fill:#c8e6c9,stroke:#388E3C
+    style P5 fill:#c8e6c9,stroke:#388E3C
 ```
+
+> 青色 = 論文のセクション、緑色 = PoCの実装。太矢印で対応関係を示す。
 
 ## 2. 概念レベルの対応
 
@@ -112,6 +136,39 @@ if ai_assistance_level > 0.5 and human_review_needed > 0.3:
 
 ## 4. PoCの結果が支持する論文の主張
 
+### 論文の主張とPoC結果の対応
+
+```mermaid
+graph LR
+    subgraph Claims["論文の主張"]
+        C1["管理理論は<br/>科学にも有効"]
+        C2["AI自律最適化で<br/>さらに改善可能"]
+        C3["人間がAI出力の<br/>BNになる"]
+        C4["段階的自律化が<br/>効果的"]
+        C5["プロセス最適化 ><br/>タスク自動化"]
+    end
+
+    subgraph Evidence["PoC検証結果"]
+        E1["TOC+PDCA<br/>+6.6%改善 ✅"]
+        E2["AI-SciOps<br/>+36.6%改善 ✅"]
+        E3["Review 100%<br/>BN ✅"]
+        E4["Stage 1→4<br/>段階的加速 ✅"]
+        E5["Stage 3-4 ><br/>Stage 1-2 ✅"]
+    end
+
+    C1 --> E1
+    C2 --> E2
+    C3 --> E3
+    C4 --> E4
+    C5 --> E5
+
+    style E1 fill:#c8e6c9,stroke:#388E3C
+    style E2 fill:#c8e6c9,stroke:#388E3C
+    style E3 fill:#c8e6c9,stroke:#388E3C
+    style E4 fill:#c8e6c9,stroke:#388E3C
+    style E5 fill:#c8e6c9,stroke:#388E3C
+```
+
 ### 支持される主張
 
 1. **「科学プロセスに管理理論を適用することは有効である」（Section 2）**
@@ -133,3 +190,25 @@ if ai_assistance_level > 0.5 and human_review_needed > 0.3:
 
 - **構造変更の過渡コスト**: Stage 3進入時にスループットが一時的に低下する現象は、論文では明示的に議論されていないが、実務上重要な知見。プロセス再構成には短期的なコストが伴う。
 - **ボトルネックの移動**: TOC+PDCAでReview→Experimentへボトルネックが移動する現象は、単一のTOCサイクルでは不十分であり、複数制約の同時対処が必要であることを示唆。
+
+## 5. 統計的検証が追加した知見
+
+[モンテカルロ実験（N=100シード）](./Monte-Carlo-Analysis.md)により、以下の追加知見が得られた：
+
+| 知見 | 論文への示唆 |
+|------|-----------|
+| 単一シードの結論が覆る危険性 | シミュレーション研究における統計的検証の重要性 |
+| AI能力が閾値を超えると最適戦略が変化 | Section 5の段階的フレームワークの実証的裏付け |
+| ボトルネック撤廃よりAI能力向上の方が先行して効果を発揮 | Section 4.1のAI for Scienceの段階的導入を支持 |
+| 情報論的課題がAI優越世界でむしろ増幅 | Section 3.2の課題はAI進歩で消えないという主張を強化 |
+
+→ 詳細: [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [結果の詳細解釈](./Results-Analysis.md) | [今後の発展](./Future-Work.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [AI優越世界での課題変化](./AI-Superior-World-Analysis.md)
+- [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)

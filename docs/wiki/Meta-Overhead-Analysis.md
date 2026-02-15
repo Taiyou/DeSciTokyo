@@ -8,6 +8,28 @@
 
 Kanban-SciOps（固定オーバーヘッド）をベースに、AIが管理コストを動的に調整する5つのバリアントを実装・比較。
 
+### バリアント構造の概観
+
+```mermaid
+graph TD
+    BASE["Kanban-SciOps<br/>固定OH = 37.0"] --> A["A: Oracle<br/>完全情報で最適化"]
+    BASE --> B["B: Noisy<br/>ノイズ混じりの観測"]
+    BASE --> C["C: Delayed<br/>12ステップ遅延"]
+    BASE --> D["D: Recursive<br/>自己参照コスト"]
+    BASE --> E["E: TrustDecay<br/>人間信頼の動態"]
+
+    A -->|"OH=34.7"| RA["Output: 72.6"]
+    B -->|"OH=43.3"| RB["Output: 70.3"]
+    C -->|"OH=40.7"| RC["Output: 70.7"]
+    D -->|"OH=47.8"| RD["Output: 71.5"]
+    E -->|"OH=36.4"| RE["Output: 74.5"]
+
+    style A fill:#c8e6c9,stroke:#388E3C,stroke-width:3px
+    style RA fill:#a5d6a7,stroke:#2E7D32,stroke-width:3px
+    style D fill:#ffcdd2,stroke:#d32f2f
+    style RD fill:#ef9a9a,stroke:#c62828
+```
+
 ### 5つのバリアント
 
 | # | バリアント | モデル化する課題 | 概要 |
@@ -18,13 +40,15 @@ Kanban-SciOps（固定オーバーヘッド）をベースに、AIが管理コ�
 | D | **MetaAI-Recursive** | 自己参照コスト | AIの最適化強度を上げるほどメタAI自体のコストが増大 |
 | E | **MetaAI-TrustDecay** | 人間要因 | 人的調整コスト削減が信頼・品質を劣化させる |
 
-## 結果
+## 結果（seed=42）
+
+> **重要な注意**: 以下はseed=42の単一シード結果です。[モンテカルロ実験（N=100）](./Monte-Carlo-Analysis.md)により、**TrustDecayが最良という結論はseed=42の偶然であり、統計的にはOracleが最良**であることが判明しています。詳細は下記「モンテカルロ検証による修正」セクションを参照してください。
 
 | バリアント | Output | 管理OH | メタAI OH | 合計OH | 対Baseline |
 |---|---|---|---|---|---|
-| **MetaAI-TrustDecay** | **74.5** | 30.4 | 6.0 | 36.4 | **+46.6%** |
+| MetaAI-TrustDecay | 74.5 | 30.4 | 6.0 | 36.4 | +46.6% |
 | Kanban (固定OH) | 73.4 | 37.0 | 0.0 | 37.0 | +44.2% |
-| MetaAI-Oracle | 72.6 | 29.7 | 5.0 | 34.7 | +42.8% |
+| **MetaAI-Oracle** | **72.6** | 29.7 | 5.0 | 34.7 | +42.8% |
 | MetaAI-Recursive | 71.5 | 33.3 | 14.4 | 47.8 | +40.5% |
 | MetaAI-Delayed | 70.7 | 34.7 | 6.0 | 40.7 | +39.1% |
 | MetaAI-Noisy | 70.3 | 35.3 | 8.0 | 43.3 | +38.2% |
@@ -37,6 +61,17 @@ Kanban-SciOps（固定オーバーヘッド）をベースに、AIが管理コ�
 ### 課題1: 再帰的自己参照コスト（Recursive）
 
 AIの最適化強度（intensity）を上げるほどメタAI自体のコストが二次関数的に増大する。
+
+```mermaid
+graph LR
+    INT["最適化強度 ↑"] --> MGM["管理OH ↓<br/>33.3"]
+    INT --> META["メタAI OH ↑↑<br/>14.4"]
+    MGM --> TOTAL["合計OH = 47.8<br/>全バリアント最悪"]
+    META --> TOTAL
+
+    style INT fill:#fff9c4,stroke:#f9a825
+    style TOTAL fill:#ffcdd2,stroke:#d32f2f
+```
 
 - メタAIのOHが**14.4**と最大 → 管理OHを33.3に下げても合計47.8で**全バリアント中最悪**
 - **教訓**: 最適化の深さには収穫逓減があり、「最適な最適化の強度」が存在する
@@ -56,10 +91,20 @@ AIはスループット変化しか観測できず、それがOH削減効果な�
 
 管理変更が12ステップ後にしか効果を現さないため：
 
-1. AIが変更を実施
-2. 効果が見えない
-3. AIが追加変更を実施（オーバーシュート）
-4. 先の変更と後の変更が同時に効き始める → 不安定化
+```mermaid
+sequenceDiagram
+    participant AI as MetaAI
+    participant SYS as システム
+    participant EFF as 効果
+
+    AI->>SYS: 変更A実施
+    Note over SYS: 12ステップの遅延...
+    AI->>SYS: 効果が見えない → 変更B追加
+    Note over SYS: さらに遅延...
+    EFF-->>SYS: 変更Aの効果が発現
+    EFF-->>SYS: 変更Bの効果も同時発現
+    Note over SYS: ⚠️ オーバーシュート<br/>不安定化
+```
 
 - **教訓**: 組織慣性を考慮しない頻繁な変更は、状態を不安定にする
 
@@ -67,9 +112,28 @@ AIはスループット変化しか観測できず、それがOH削減効果な�
 
 AIが人的調整コストを積極的に削減 → 信頼が1.0→0.3に急落 → 不確実性・失敗率が上昇。しかし：
 
-1. ステップ50付近でAIが品質低下を**検知**
-2. 協調コストを**復元**
-3. 信頼が部分的に**回復**
+```mermaid
+graph LR
+    subgraph Phase1["Phase 1: 削減"]
+        A1["AI: 人的コスト削減"] --> B1["信頼 1.0 → 0.3 📉"]
+        B1 --> C1["不確実性↑ 失敗率↑"]
+    end
+
+    subgraph Phase2["Phase 2: 検知"]
+        A2["Step ~50: 品質低下を検知"] --> B2["AI: 危機を認識"]
+    end
+
+    subgraph Phase3["Phase 3: 回復"]
+        A3["協調コストを復元"] --> B3["信頼が部分的に回復 📈"]
+        B3 --> C3["最適バランスを発見 🏆"]
+    end
+
+    Phase1 --> Phase2 --> Phase3
+
+    style Phase1 fill:#ffcdd2,stroke:#d32f2f
+    style Phase2 fill:#fff9c4,stroke:#f9a825
+    style Phase3 fill:#c8e6c9,stroke:#388E3C
+```
 
 この「削減→劣化検知→復元」サイクルが結果的に**最適なバランスを発見**し、全バリアント中最高の成績を達成。
 
@@ -91,19 +155,65 @@ TrustDecayバリアントが最高成績を出したのは、信頼の「崩壊�
 
 ### Output比較 + Overhead内訳
 
-`poc/results/figures_v4/v4_01_meta_output_comparison.png`
+![Output比較とOverhead内訳](images/v4_01_meta_output_comparison.png)
 
-### 課題別分析（信頼崩壊・再帰コスト・OH推移）
+### 累積出力推移
 
-`poc/results/figures_v4/v4_04_meta_challenges.png`
+![累積出力推移](images/v4_02_meta_cumulative.png)
 
 ### 各バリアントのOHプロファイル動的変化
 
-`poc/results/figures_v4/v4_03_meta_profiles.png`
+![OHプロファイル動的変化](images/v4_03_meta_profiles.png)
+
+### 課題別分析（信頼崩壊・再帰コスト・OH推移）
+
+![課題別分析](images/v4_04_meta_challenges.png)
 
 ### 効率フロンティア
 
-`poc/results/figures_v4/v4_05_meta_efficiency.png`
+![効率フロンティア](images/v4_05_meta_efficiency.png)
+
+## モンテカルロ検証による修正
+
+> **[モンテカルロ実験（N=100シード）](./Monte-Carlo-Analysis.md)により、上記seed=42の結論は部分的に覆った。**
+
+### 修正点
+
+```mermaid
+graph LR
+    subgraph WRONG["❌ seed=42 の結論"]
+        W1["TrustDecay最良<br/>74.5"]
+    end
+    subgraph RIGHT["✅ N=100 の結論"]
+        R1["Oracle最良<br/>72.8 (29%勝率)<br/>上位3つは区別不能"]
+    end
+    WRONG ==> RIGHT
+    style WRONG fill:#ffcdd2,stroke:#d32f2f
+    style RIGHT fill:#c8e6c9,stroke:#388E3C
+```
+
+| 項目 | seed=42の結論 | N=100の結論 |
+|---|---|---|
+| 最良バリアント | TrustDecay (74.5) | **Oracle (72.8)** |
+| TrustDecayの順位 | 1位 | **4位**（有意に劣る, p < 0.001） |
+| 上位の構造 | TrustDecay > Oracle | **Oracle ≈ Delayed ≈ Noisy**（区別不能） |
+
+### 課題分析への影響
+
+- **課題4（TrustDecay）の「最も示唆的な結果」は修正が必要**: 「削減→劣化検知→復元」サイクルによる最適バランス発見は、seed=42では機能したが、統計的には**Oracleの慎重な完全情報最適化の方が安定して優れる**
+- **ただし、AIの能力が十分に高い世界（[BN残存世界](./Bottleneck-Persists-Analysis.md)、[AI優越世界](./AI-Superior-World-Analysis.md)）ではTrustDecayが統計的に最良になる**ことも確認された
+- 課題1-3（Recursive、Noisy、Delayed）の分析は概ね妥当。これらが情報論的課題として増幅される点は、AI優越世界で統計的にも確認された
+
+→ 詳細: [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [結果の詳細解釈](./Results-Analysis.md) | [論文との対応関係](./Paper-Mapping.md)
+- [AI優越世界での課題変化](./AI-Superior-World-Analysis.md) | [モンテカルロ実験](./Monte-Carlo-Analysis.md)
+- [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md) | [今後の発展](./Future-Work.md)
 
 ---
 
