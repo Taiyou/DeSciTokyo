@@ -238,23 +238,23 @@ graph LR
 
 ### 世界間比較
 
-`poc/results/figures_v5/v5_01_world_comparison.png`
+![世界間比較](images/v5_01_world_comparison.png)
 
 ### 課題の持続性
 
-`poc/results/figures_v5/v5_02_challenge_persistence.png`
-
-### 課題の生存率
-
-`poc/results/figures_v5/v5_05_challenge_survival.png`
-
-### 効率フロンティア比較
-
-`poc/results/figures_v5/v5_04_efficiency_both_worlds.png`
+![課題の持続性](images/v5_02_challenge_persistence.png)
 
 ### 累積出力推移
 
-`poc/results/figures_v5/v5_03_cumulative_comparison.png`
+![累積出力推移](images/v5_03_cumulative_comparison.png)
+
+### 効率フロンティア比較
+
+![効率フロンティア比較](images/v5_04_efficiency_both_worlds.png)
+
+### 課題の生存率
+
+![課題の生存率](images/v5_05_challenge_survival.png)
 
 ---
 

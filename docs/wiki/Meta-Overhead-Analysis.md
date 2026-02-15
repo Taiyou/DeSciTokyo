@@ -153,19 +153,23 @@ TrustDecayバリアントが最高成績を出したのは、信頼の「崩壊�
 
 ### Output比較 + Overhead内訳
 
-`poc/results/figures_v4/v4_01_meta_output_comparison.png`
+![Output比較とOverhead内訳](images/v4_01_meta_output_comparison.png)
 
-### 課題別分析（信頼崩壊・再帰コスト・OH推移）
+### 累積出力推移
 
-`poc/results/figures_v4/v4_04_meta_challenges.png`
+![累積出力推移](images/v4_02_meta_cumulative.png)
 
 ### 各バリアントのOHプロファイル動的変化
 
-`poc/results/figures_v4/v4_03_meta_profiles.png`
+![OHプロファイル動的変化](images/v4_03_meta_profiles.png)
+
+### 課題別分析（信頼崩壊・再帰コスト・OH推移）
+
+![課題別分析](images/v4_04_meta_challenges.png)
 
 ### 効率フロンティア
 
-`poc/results/figures_v4/v4_05_meta_efficiency.png`
+![効率フロンティア](images/v4_05_meta_efficiency.png)
 
 ---
 

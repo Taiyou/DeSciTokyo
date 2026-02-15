@@ -41,6 +41,14 @@ git clone "${WIKI_REPO}" "${WIKI_TMPDIR}" 2>/dev/null || {
 echo "Copying wiki pages..."
 cp "${WIKI_SOURCE}"/*.md "${WIKI_TMPDIR}/"
 
+# Copy images if they exist
+if [ -d "${WIKI_SOURCE}/images" ]; then
+    echo "Copying images..."
+    mkdir -p "${WIKI_TMPDIR}/images"
+    cp "${WIKI_SOURCE}"/images/*.png "${WIKI_TMPDIR}/images/" 2>/dev/null || true
+    echo "  Copied $(ls "${WIKI_TMPDIR}/images/" 2>/dev/null | wc -l) images"
+fi
+
 cd "${WIKI_TMPDIR}"
 
 # Check for changes
