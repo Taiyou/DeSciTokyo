@@ -8,6 +8,40 @@
 
 > 産業界で長年培われてきたプロセスマネジメント理論（PDCA、アジャイル、制約理論）は、科学研究にも適用できるのか？さらに、AIがこれらの最適化を自律的に行うことで、研究のスループットはどの程度向上するのか？
 
+### プロジェクト全体像
+
+```mermaid
+graph TB
+    subgraph 論文["📄 論文: Science in the Loop"]
+        T1["PDCA / TOC / Agile<br/>産業管理理論"]
+        T2["AI for Science<br/>AI駆動型研究"]
+        T3["4段階フレームワーク<br/>段階的自律化"]
+    end
+
+    subgraph PoC["🔬 PoC シミュレーション"]
+        P1["6段階パイプライン<br/>Survey → Review"]
+        P2["3つの最適化戦略<br/>Baseline / TOC+PDCA / AI-SciOps"]
+        P3["100タイムステップ<br/>メトリクス収集"]
+    end
+
+    subgraph Meta["🔄 メタ最適化実験"]
+        M1["v4: 管理OH動的最適化<br/>5バリアント比較"]
+        M2["v5: AI優越世界<br/>課題構造の変化"]
+    end
+
+    T1 --> P2
+    T2 --> P2
+    T3 --> P2
+    P1 --> P3
+    P2 --> P3
+    P3 --> M1
+    P3 --> M2
+
+    style 論文 fill:#e8f4f8,stroke:#2196F3
+    style PoC fill:#fff3e0,stroke:#FF9800
+    style Meta fill:#f3e5f5,stroke:#9C27B0
+```
+
 ### このPoCが示すこと
 
 科学研究の6段階パイプラインをシミュレーションし、**3つの最適化戦略**を100タイムステップにわたって比較しました。
@@ -17,6 +51,16 @@
 | Baseline（管理なし） | 50.86 | - |
 | TOC + PDCA（産業的管理手法） | 54.23 | +6.6% |
 | AI-SciOps（AI自律最適化） | 69.48 | **+36.6%** |
+
+### 結果の視覚的サマリ
+
+```mermaid
+xychart-beta
+    title "最適化戦略別 総研究出力"
+    x-axis ["Baseline", "TOC+PDCA", "AI-SciOps"]
+    y-axis "総研究出力" 0 --> 80
+    bar [50.86, 54.23, 69.48]
+```
 
 ## Wiki 目次
 

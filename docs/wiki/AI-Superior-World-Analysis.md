@@ -4,6 +4,33 @@
 
 > AIが人の能力を上回って基本的に人の能力よりも信頼できる場合には、管理コスト最適化の課題はどう変わるか？
 
+## 2つの世界の構造的な違い
+
+```mermaid
+graph TB
+    subgraph Current["現在の世界"]
+        direction TB
+        C_PIPE["パイプライン"]
+        C_BN["人的レビュー BN ⛓️<br/>最大80%減速"]
+        C_AI["AI支援: 部分的<br/>Exp: 0.3, Review: 0.4"]
+        C_PIPE --> C_BN
+        C_BN --> C_AI
+        style C_BN fill:#ffcdd2,stroke:#d32f2f
+    end
+
+    subgraph Superior["AI優越の世界"]
+        direction TB
+        S_PIPE["パイプライン"]
+        S_BN["人的レビュー BN 消滅 ✅<br/>HR: 0.8 → 0.10"]
+        S_AI["AI支援: ほぼ全自動<br/>Exp: 0.70, Review: 0.85"]
+        S_PIPE --> S_BN
+        S_BN --> S_AI
+        style S_BN fill:#c8e6c9,stroke:#388E3C
+    end
+
+    Current -.->|"AI能力の<br/>飛躍的向上"| Superior
+```
+
 ## 変更した前提
 
 現在のシミュレーションには3つの「人間依存」がハードコードされている。AIが人間を超える世界では、これらの前提がすべて崩れる。
@@ -74,6 +101,28 @@ AI優越世界ではこのボトルネックが**完全に消滅**する。AIが
 
 ### 変化1: 最適化の価値が爆発的に増大する
 
+```mermaid
+graph LR
+    subgraph 現在["現在の世界"]
+        C_BL["Baseline: 50.9"]
+        C_BEST["最良: 74.5"]
+        C_GAP["差: +46%"]
+        C_BL --> C_GAP
+        C_BEST --> C_GAP
+    end
+
+    subgraph AI優越["AI優越の世界"]
+        A_BL["Baseline: 55.0"]
+        A_BEST["最良: 219.7"]
+        A_GAP["差: +299% 💥"]
+        A_BL --> A_GAP
+        A_BEST --> A_GAP
+    end
+
+    style C_GAP fill:#fff9c4,stroke:#f9a825
+    style A_GAP fill:#ff8a65,stroke:#d84315,color:white
+```
+
 Baselineは8%しか改善しないのに、最良戦略は**195%**改善。
 
 > **AIが優秀になるほど、管理最適化の重要性が「下がる」のではなく、逆に「上がる」。**
@@ -111,13 +160,35 @@ TrustDecayが「人的調整コストを大胆に削減しても品質が落ち�
 
 ## 課題の構造的シフト
 
+```mermaid
+graph TD
+    subgraph Now["現在の世界の課題優先度"]
+        direction LR
+        N1["🧑 人間要因<br/>最重要"] --> N2["📡 情報論的課題<br/>中程度"] --> N3["💻 計算コスト<br/>軽微"]
+        style N1 fill:#ef5350,stroke:#c62828,color:white
+        style N2 fill:#ff9800,stroke:#e65100,color:white
+        style N3 fill:#fff9c4,stroke:#f9a825
+    end
+
+    subgraph Future["AI優越世界の課題優先度"]
+        direction LR
+        F1["📡 情報論的課題<br/>最重要 ⚠️"] --> F2["💻 計算コスト<br/>増大"] --> F3["🧑 人間要因<br/>消滅 ✅"]
+        style F1 fill:#ef5350,stroke:#c62828,color:white
+        style F2 fill:#ff9800,stroke:#e65100,color:white
+        style F3 fill:#c8e6c9,stroke:#388E3C
+    end
+
+    Now ==>|"AIが人間を超えると"| Future
 ```
-現在の世界の課題優先度:   人間 > 情報 > 計算
 
-         |  AIが人間を超えると
-         v
+### 課題増幅率
 
-AI優越世界の課題優先度:   情報 >> 計算 >> 人間(=0)
+```mermaid
+xychart-beta
+    title "AI優越世界での課題増幅率（vs Oracle gap）"
+    x-axis ["Noisy (観測性)", "Delayed (遅延)", "Recursive (自己参照)"]
+    y-axis "増幅率 (%)" 0 --> 700
+    bar [589, 696, 433]
 ```
 
 ## 結論
@@ -140,6 +211,28 @@ AI優越世界の課題優先度:   情報 >> 計算 >> 人間(=0)
 > **AI優越世界での管理最適化には「リアルタイム観測基盤」と「因果推論能力」が決定的に重要になる。**
 
 これは、AIが人間を超えた後の研究マネジメントにおいて、投資すべき領域が「人材管理」から「情報基盤」に根本的にシフトすることを意味する。
+
+```mermaid
+graph LR
+    subgraph 今["現在の投資優先"]
+        I1["人材管理・育成"]
+        I2["レビュー体制"]
+        I3["情報基盤"]
+    end
+    subgraph 未来["AI優越世界の投資優先"]
+        F1["リアルタイム観測基盤"]
+        F2["因果推論エンジン"]
+        F3["高速フィードバック系"]
+    end
+
+    I1 -.->|"優先度低下"| F3
+    I3 -.->|"優先度上昇"| F1
+
+    style I1 fill:#ef5350,stroke:#c62828,color:white
+    style F1 fill:#ef5350,stroke:#c62828,color:white
+    style F2 fill:#ff8a65,stroke:#e64a19
+    style I3 fill:#fff9c4,stroke:#f9a825
+```
 
 ## 可視化
 

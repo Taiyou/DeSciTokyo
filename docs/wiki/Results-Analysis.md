@@ -8,6 +8,14 @@
 | TOC + PDCA | 54.23 | +6.6% | 0.47 (Review) |
 | AI-SciOps | 69.48 | +36.6% | 0.95 (Review) |
 
+```mermaid
+xychart-beta
+    title "戦略別パフォーマンス比較"
+    x-axis ["Baseline", "TOC+PDCA", "AI-SciOps"]
+    y-axis "総研究出力" 0 --> 80
+    bar [50.86, 54.23, 69.48]
+```
+
 ## 図1: 累積研究出力（01_cumulative_output.png）
 
 ### 読み方
@@ -40,6 +48,34 @@
 
 ### 読み方
 3つの戦略それぞれについて、各プロセスが「ボトルネック（最もスループットが低いプロセス）」だった回数を棒グラフで表示。
+
+### ボトルネック移動の動態
+
+```mermaid
+graph TD
+    subgraph Baseline["Baseline: 固定ボトルネック"]
+        B_R["Review 100/100回"]
+        style B_R fill:#ef5350,stroke:#c62828,color:white
+    end
+
+    subgraph TOC["TOC+PDCA: ボトルネック移動"]
+        T_R["Review ~60回"]
+        T_E["Experiment ~30回"]
+        T_R -.->|"リソース集中→移動"| T_E
+        T_E -.->|"PDCAサイクル→復帰"| T_R
+        style T_R fill:#ef5350,stroke:#c62828,color:white
+        style T_E fill:#ff8a65,stroke:#e64a19
+    end
+
+    subgraph AI["AI-SciOps: 均衡化（分散）"]
+        A_R["Review"] ~~~ A_W["Writing"]
+        A_E["Experiment"] ~~~ A_A["Analysis"]
+        style A_R fill:#ff8a65,stroke:#e64a19
+        style A_W fill:#ffcc80,stroke:#FF9800
+        style A_E fill:#ffcc80,stroke:#FF9800
+        style A_A fill:#ffe0b2,stroke:#FFB74D
+    end
+```
 
 ### 発見
 
@@ -87,6 +123,28 @@
 2. **最終ボトルネックスループット**: AI-SciOps (0.95) >> Baseline (0.60) > TOC+PDCA (0.47)。TOC+PDCAのボトルネックスループットがBaselineより低いのは、最終時点でのリソース偏りの影響です。しかしAI-SciOpsはStage 4のメタレビュー導入でReviewの人間ボトルネックを緩和し、0.95まで引き上げています。
 
 3. **総手戻り・総失敗**: AI-SciOpsが最も低い。AI支援による不確実性削減と失敗率低下の効果です。
+
+## 核心的な知見マップ
+
+```mermaid
+mindmap
+  root((PoC 結果))
+    Baseline
+      Review恒常的BN
+      WIP無制限蓄積
+      出力 50.86
+    TOC+PDCA
+      BN移動現象
+      PDCA周期的変動
+      +6.6%改善
+    AI-SciOps
+      4段階で段階的加速
+      BN均衡化
+      WIP低く安定
+      +36.6%改善
+      Stage3で一時低下
+      Stage4で急加速
+```
 
 ## 核心的なテイクアウェイ
 

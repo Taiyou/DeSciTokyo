@@ -8,6 +8,28 @@
 
 Kanban-SciOps（固定オーバーヘッド）をベースに、AIが管理コストを動的に調整する5つのバリアントを実装・比較。
 
+### バリアント構造の概観
+
+```mermaid
+graph TD
+    BASE["Kanban-SciOps<br/>固定OH = 37.0"] --> A["A: Oracle<br/>完全情報で最適化"]
+    BASE --> B["B: Noisy<br/>ノイズ混じりの観測"]
+    BASE --> C["C: Delayed<br/>12ステップ遅延"]
+    BASE --> D["D: Recursive<br/>自己参照コスト"]
+    BASE --> E["E: TrustDecay<br/>人間信頼の動態"]
+
+    A -->|"OH=34.7"| RA["Output: 72.6"]
+    B -->|"OH=43.3"| RB["Output: 70.3"]
+    C -->|"OH=40.7"| RC["Output: 70.7"]
+    D -->|"OH=47.8"| RD["Output: 71.5"]
+    E -->|"OH=36.4"| RE["Output: 74.5 🏆"]
+
+    style E fill:#c8e6c9,stroke:#388E3C,stroke-width:3px
+    style RE fill:#a5d6a7,stroke:#2E7D32,stroke-width:3px
+    style D fill:#ffcdd2,stroke:#d32f2f
+    style RD fill:#ef9a9a,stroke:#c62828
+```
+
 ### 5つのバリアント
 
 | # | バリアント | モデル化する課題 | 概要 |
@@ -38,6 +60,17 @@ Kanban-SciOps（固定オーバーヘッド）をベースに、AIが管理コ�
 
 AIの最適化強度（intensity）を上げるほどメタAI自体のコストが二次関数的に増大する。
 
+```mermaid
+graph LR
+    INT["最適化強度 ↑"] --> MGM["管理OH ↓<br/>33.3"]
+    INT --> META["メタAI OH ↑↑<br/>14.4"]
+    MGM --> TOTAL["合計OH = 47.8<br/>全バリアント最悪"]
+    META --> TOTAL
+
+    style INT fill:#fff9c4,stroke:#f9a825
+    style TOTAL fill:#ffcdd2,stroke:#d32f2f
+```
+
 - メタAIのOHが**14.4**と最大 → 管理OHを33.3に下げても合計47.8で**全バリアント中最悪**
 - **教訓**: 最適化の深さには収穫逓減があり、「最適な最適化の強度」が存在する
 
@@ -56,10 +89,20 @@ AIはスループット変化しか観測できず、それがOH削減効果な�
 
 管理変更が12ステップ後にしか効果を現さないため：
 
-1. AIが変更を実施
-2. 効果が見えない
-3. AIが追加変更を実施（オーバーシュート）
-4. 先の変更と後の変更が同時に効き始める → 不安定化
+```mermaid
+sequenceDiagram
+    participant AI as MetaAI
+    participant SYS as システム
+    participant EFF as 効果
+
+    AI->>SYS: 変更A実施
+    Note over SYS: 12ステップの遅延...
+    AI->>SYS: 効果が見えない → 変更B追加
+    Note over SYS: さらに遅延...
+    EFF-->>SYS: 変更Aの効果が発現
+    EFF-->>SYS: 変更Bの効果も同時発現
+    Note over SYS: ⚠️ オーバーシュート<br/>不安定化
+```
 
 - **教訓**: 組織慣性を考慮しない頻繁な変更は、状態を不安定にする
 
@@ -67,9 +110,28 @@ AIはスループット変化しか観測できず、それがOH削減効果な�
 
 AIが人的調整コストを積極的に削減 → 信頼が1.0→0.3に急落 → 不確実性・失敗率が上昇。しかし：
 
-1. ステップ50付近でAIが品質低下を**検知**
-2. 協調コストを**復元**
-3. 信頼が部分的に**回復**
+```mermaid
+graph LR
+    subgraph Phase1["Phase 1: 削減"]
+        A1["AI: 人的コスト削減"] --> B1["信頼 1.0 → 0.3 📉"]
+        B1 --> C1["不確実性↑ 失敗率↑"]
+    end
+
+    subgraph Phase2["Phase 2: 検知"]
+        A2["Step ~50: 品質低下を検知"] --> B2["AI: 危機を認識"]
+    end
+
+    subgraph Phase3["Phase 3: 回復"]
+        A3["協調コストを復元"] --> B3["信頼が部分的に回復 📈"]
+        B3 --> C3["最適バランスを発見 🏆"]
+    end
+
+    Phase1 --> Phase2 --> Phase3
+
+    style Phase1 fill:#ffcdd2,stroke:#d32f2f
+    style Phase2 fill:#fff9c4,stroke:#f9a825
+    style Phase3 fill:#c8e6c9,stroke:#388E3C
+```
 
 この「削減→劣化検知→復元」サイクルが結果的に**最適なバランスを発見**し、全バリアント中最高の成績を達成。
 

@@ -1,5 +1,48 @@
 # コードアーキテクチャ
 
+## モジュール依存関係
+
+```mermaid
+graph TD
+    subgraph Entry["エントリポイント"]
+        SIM["simulator.py<br/>シミュレーション実行"]
+        VIS["visualize.py<br/>可視化生成"]
+        META["run_meta_overhead.py<br/>メタOH実験"]
+        SUP["run_ai_superior.py<br/>AI優越世界実験"]
+    end
+
+    subgraph Core["コアモジュール"]
+        SP["scientific_process.py<br/>パイプラインモデル"]
+        OPT["optimizers.py<br/>最適化戦略(3種)"]
+        MOH["meta_overhead_optimizer.py<br/>メタOH最適化(5種)"]
+    end
+
+    subgraph Output["出力"]
+        JSON["results/*.json"]
+        FIG1["results/figures/*.png"]
+        FIG4["results/figures_v4/*.png"]
+        FIG5["results/figures_v5/*.png"]
+    end
+
+    SIM --> SP
+    SIM --> OPT
+    SIM --> JSON
+    VIS --> JSON
+    VIS --> FIG1
+    META --> SP
+    META --> MOH
+    META --> FIG4
+    SUP --> SP
+    SUP --> MOH
+    SUP --> FIG5
+    OPT --> SP
+    MOH --> SP
+
+    style Core fill:#e8f4f8,stroke:#2196F3
+    style Entry fill:#fff3e0,stroke:#FF9800
+    style Output fill:#f3e5f5,stroke:#9C27B0
+```
+
 ## ファイル構成
 
 ```
@@ -114,18 +157,74 @@ run_experiment()
 
 ## データフロー
 
+```mermaid
+sequenceDiagram
+    participant Main as simulator.py
+    participant SP as scientific_process.py
+    participant OPT as optimizers.py
+    participant JSON as results/*.json
+    participant VIS as visualize.py
+    participant PNG as figures/*.png
+
+    Main->>SP: create_default_pipeline()
+    SP-->>Main: pipeline (6 ProcessSteps)
+
+    loop 3 strategies × 100 steps
+        Main->>OPT: optimizer.optimize(pipeline, t)
+        OPT-->>Main: 調整済みpipeline
+        Main->>SP: step(incoming_work)
+        SP-->>Main: output, metrics
+    end
+
+    Main->>JSON: save SimulationResult
+    VIS->>JSON: load results
+    VIS->>PNG: generate 6 figures
 ```
-[simulator.py]
-  │
-  ├── create_default_pipeline()  ← scientific_process.py
-  ├── BaselineOptimizer()        ← optimizers.py
-  ├── TOCPDCAOptimizer()         ← optimizers.py
-  ├── AISciOpsOptimizer()        ← optimizers.py
-  │
-  ├── run() × 3 strategies
-  │     └── 100 time steps × 6 processes
-  │
-  └── save to results/*.json
-         │
-         └── [visualize.py] → results/figures/*.png
+
+### クラス階層
+
+```mermaid
+classDiagram
+    class ProcessConfig {
+        +name: str
+        +base_throughput: float
+        +uncertainty: float
+        +failure_rate: float
+        +resource_cost: float
+        +ai_automatable: float
+        +human_review_needed: float
+    }
+
+    class ProcessStep {
+        +config: ProcessConfig
+        +throughput: float
+        +work_in_progress: float
+        +effective_throughput() float
+        +step(incoming_work) float
+    }
+
+    class Optimizer {
+        <<abstract>>
+        +optimize(pipeline, t, resources)
+        +get_bottleneck(pipeline)
+    }
+
+    class BaselineOptimizer {
+        +optimize()
+    }
+    class TOCPDCAOptimizer {
+        +pdca_cycle_length: int
+        +current_phase: str
+        +optimize()
+    }
+    class AISciOpsOptimizer {
+        +history: list
+        +exploration_rate: float
+        +optimize()
+    }
+
+    ProcessConfig --* ProcessStep
+    Optimizer <|-- BaselineOptimizer
+    Optimizer <|-- TOCPDCAOptimizer
+    Optimizer <|-- AISciOpsOptimizer
 ```

@@ -1,5 +1,40 @@
 # 今後の発展
 
+## ロードマップ全体像
+
+```mermaid
+graph LR
+    subgraph Short["短期（1-3ヶ月）"]
+        S1["Agile追加"]
+        S2["確率モデル精緻化"]
+        S3["感度分析"]
+    end
+
+    subgraph Mid["中期（3-6ヶ月）"]
+        M1["LLM API組込"]
+        M2["並列パイプライン"]
+        M3["複数ラボ協調"]
+    end
+
+    subgraph Long["長期ビジョン"]
+        L1["実データ検証"]
+        L2["SciOpsプラットフォーム"]
+        L3["メタサイエンスシミュレータ"]
+    end
+
+    S1 --> M1
+    S2 --> M2
+    S3 --> M1
+    M1 --> L2
+    M2 --> M3
+    M3 --> L3
+    L1 --> L2
+
+    style Short fill:#c8e6c9,stroke:#388E3C
+    style Mid fill:#bbdefb,stroke:#1976D2
+    style Long fill:#f3e5f5,stroke:#9C27B0
+```
+
 ## 短期的な改善
 
 ### 1. Agileフレームワークの追加
@@ -32,9 +67,23 @@
 
 ### 5. 並列・分岐パイプラインへの拡張
 現在は直列パイプラインだが、より現実的な研究プロセスを表現するため、並列・分岐構造をサポートする。
-```
-Survey → Hypothesis ─┬─ Experiment A → Analysis A ─┬─ Writing → Review
-                      └─ Experiment B → Analysis B ─┘
+
+```mermaid
+graph LR
+    SV["Survey"] --> HY["Hypothesis"]
+    HY --> EA["Experiment A"]
+    HY --> EB["Experiment B"]
+    EA --> AA["Analysis A"]
+    EB --> AB["Analysis B"]
+    AA --> WR["Writing"]
+    AB --> WR
+    WR --> RV["Review"]
+
+    EA -.->|"失敗時"| HY
+    EB -.->|"失敗時"| HY
+
+    style EA fill:#bbdefb,stroke:#1976D2
+    style EB fill:#bbdefb,stroke:#1976D2
 ```
 - 複数の仮説を並行検証するパターン
 - 実験の失敗時に仮説に戻るフィードバックループ
