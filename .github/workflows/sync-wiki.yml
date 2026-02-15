@@ -1,0 +1,26 @@
+name: Sync Wiki
+
+on:
+  push:
+    branches: [main, 'claude/**']
+    paths:
+      - 'docs/wiki/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Sync docs/wiki to GitHub Wiki
+        uses: Andrew-Chen-Wang/github-wiki-action@v4
+        env:
+          WIKI_DIR: docs/wiki
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_MAIL: github-actions[bot]@users.noreply.github.com
+          GH_NAME: github-actions[bot]
