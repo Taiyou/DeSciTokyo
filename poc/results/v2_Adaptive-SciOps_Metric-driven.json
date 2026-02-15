@@ -1,0 +1,3413 @@
+{
+  "optimizer_name": "Adaptive-SciOps (Metric-driven)",
+  "total_time_steps": 100,
+  "total_output": 68.231,
+  "metrics": [
+    {
+      "time_step": 0,
+      "process_throughputs": {
+        "Survey": 2.3616,
+        "Hypothesis": 1.4688,
+        "Experiment": 1.151,
+        "Analysis": 2.3458,
+        "Writing": 1.2874,
+        "Review": 1.2528
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.6984,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.9253,
+      "cumulative_output": 0.9253,
+      "bottleneck_process": "Experiment",
+      "bottleneck_throughput": 1.151,
+      "total_rework": 0.4406,
+      "total_failures": 0.3028
+    },
+    {
+      "time_step": 1,
+      "process_throughputs": {
+        "Survey": 2.3616,
+        "Hypothesis": 1.4688,
+        "Experiment": 1.5696,
+        "Analysis": 2.3458,
+        "Writing": 1.2874,
+        "Review": 0.9187
+      },
+      "process_wip": {
+        "Survey": 0.92,
+        "Hypothesis": 0.0,
+        "Experiment": 0.5728,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.9187,
+      "cumulative_output": 1.8441,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.9187,
+      "total_rework": 1.4813,
+      "total_failures": 0.4056
+    },
+    {
+      "time_step": 2,
+      "process_throughputs": {
+        "Survey": 2.3616,
+        "Hypothesis": 1.4688,
+        "Experiment": 0.6278,
+        "Analysis": 2.3458,
+        "Writing": 2.3602,
+        "Review": 1.2528
+      },
+      "process_wip": {
+        "Survey": 0.0861,
+        "Hypothesis": 1.26,
+        "Experiment": 0.7848,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6278,
+      "cumulative_output": 2.4719,
+      "bottleneck_process": "Experiment",
+      "bottleneck_throughput": 0.6278,
+      "total_rework": 1.9219,
+      "total_failures": 0.4056
+    },
+    {
+      "time_step": 3,
+      "process_throughputs": {
+        "Survey": 2.3616,
+        "Hypothesis": 1.4688,
+        "Experiment": 1.5696,
+        "Analysis": 2.3458,
+        "Writing": 1.2874,
+        "Review": 0.9187
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 1.1429,
+        "Experiment": 0.4172,
+        "Analysis": 0.452,
+        "Writing": 0.178,
+        "Review": 0.0277
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4845,
+      "cumulative_output": 2.9564,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.9187,
+      "total_rework": 2.85,
+      "total_failures": 0.5626
+    },
+    {
+      "time_step": 4,
+      "process_throughputs": {
+        "Survey": 2.3616,
+        "Hypothesis": 1.4688,
+        "Experiment": 0.6278,
+        "Analysis": 2.3458,
+        "Writing": 2.3602,
+        "Review": 1.2528
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.9397,
+        "Experiment": 1.503,
+        "Analysis": 0.0,
+        "Writing": 0.1925,
+        "Review": 0.0311
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5434,
+      "cumulative_output": 3.4999,
+      "bottleneck_process": "Experiment",
+      "bottleneck_throughput": 0.6278,
+      "total_rework": 3.5921,
+      "total_failures": 0.5626
+    },
+    {
+      "time_step": 5,
+      "process_throughputs": {
+        "Survey": 2.3616,
+        "Hypothesis": 1.4688,
+        "Experiment": 1.5696,
+        "Analysis": 2.3458,
+        "Writing": 1.2874,
+        "Review": 0.9187
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.7365,
+        "Experiment": 0.9313,
+        "Analysis": 0.6561,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.9187,
+      "cumulative_output": 4.4186,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.9187,
+      "total_rework": 4.063,
+      "total_failures": 0.6725
+    },
+    {
+      "time_step": 6,
+      "process_throughputs": {
+        "Survey": 2.3616,
+        "Hypothesis": 1.4688,
+        "Experiment": 0.6278,
+        "Analysis": 2.3458,
+        "Writing": 2.3602,
+        "Review": 1.2528
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.5333,
+        "Experiment": 1.5839,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 1.2528,
+      "cumulative_output": 5.6714,
+      "bottleneck_process": "Experiment",
+      "bottleneck_throughput": 0.6278,
+      "total_rework": 4.063,
+      "total_failures": 0.6725
+    },
+    {
+      "time_step": 7,
+      "process_throughputs": {
+        "Survey": 3.6791,
+        "Hypothesis": 2.5506,
+        "Experiment": 1.0026,
+        "Analysis": 3.2368,
+        "Writing": 1.4511,
+        "Review": 0.7395
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.6333,
+        "Experiment": 2.0539,
+        "Analysis": 0.0,
+        "Writing": 0.1805,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.7018,
+      "cumulative_output": 6.3732,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.7395,
+      "total_rework": 5.1238,
+      "total_failures": 0.6725
+    },
+    {
+      "time_step": 8,
+      "process_throughputs": {
+        "Survey": 3.4341,
+        "Hypothesis": 2.8009,
+        "Experiment": 1.0794,
+        "Analysis": 3.0213,
+        "Writing": 1.5987,
+        "Review": 0.6781
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.6583,
+        "Experiment": 2.4939,
+        "Analysis": 0.0,
+        "Writing": 0.2268,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6781,
+      "cumulative_output": 7.0513,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.6781,
+      "total_rework": 6.2917,
+      "total_failures": 0.6725
+    },
+    {
+      "time_step": 9,
+      "process_throughputs": {
+        "Survey": 3.0853,
+        "Hypothesis": 2.8043,
+        "Experiment": 1.5105,
+        "Analysis": 2.7144,
+        "Writing": 1.4651,
+        "Review": 0.6214
+      },
+      "process_wip": {
+        "Survey": 0.92,
+        "Hypothesis": 0.0,
+        "Experiment": 2.5791,
+        "Analysis": 0.0,
+        "Writing": 0.3849,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6214,
+      "cumulative_output": 7.6727,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.6214,
+      "total_rework": 7.3313,
+      "total_failures": 1.0293
+    },
+    {
+      "time_step": 10,
+      "process_throughputs": {
+        "Survey": 2.8247,
+        "Hypothesis": 2.7104,
+        "Experiment": 1.6576,
+        "Analysis": 2.4851,
+        "Writing": 1.3681,
+        "Review": 0.5803
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 3.3501,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.4281
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0205,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5223,
+      "cumulative_output": 8.195,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.5803,
+      "total_rework": 7.3313,
+      "total_failures": 1.2531
+    },
+    {
+      "time_step": 11,
+      "process_throughputs": {
+        "Survey": 2.5388,
+        "Hypothesis": 2.4361,
+        "Experiment": 2.0157,
+        "Analysis": 2.2336,
+        "Writing": 1.1557,
+        "Review": 0.532
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 2.7297,
+        "Analysis": 0.0,
+        "Writing": 1.068,
+        "Review": 0.2794
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.532,
+      "cumulative_output": 8.727,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.532,
+      "total_rework": 7.678,
+      "total_failures": 1.2531
+    },
+    {
+      "time_step": 12,
+      "process_throughputs": {
+        "Survey": 2.2361,
+        "Hypothesis": 2.1457,
+        "Experiment": 2.402,
+        "Analysis": 1.9099,
+        "Writing": 1.1268,
+        "Review": 0.478
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 3.2645,
+        "Analysis": 0.0,
+        "Writing": 0.9465,
+        "Review": 0.9474
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0169,
+        "Review": 0.0
+      },
+      "system_throughput": 0.3346,
+      "cumulative_output": 9.0616,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.478,
+      "total_rework": 8.542,
+      "total_failures": 1.2531
+    },
+    {
+      "time_step": 13,
+      "process_throughputs": {
+        "Survey": 1.8659,
+        "Hypothesis": 1.7904,
+        "Experiment": 2.7117,
+        "Analysis": 1.6416,
+        "Writing": 1.1235,
+        "Review": 0.4786
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 3.4007,
+        "Analysis": 0.0,
+        "Writing": 0.7905,
+        "Review": 1.2095
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0338,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4786,
+      "cumulative_output": 9.5402,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.4786,
+      "total_rework": 9.3555,
+      "total_failures": 1.2531
+    },
+    {
+      "time_step": 14,
+      "process_throughputs": {
+        "Survey": 1.5495,
+        "Hypothesis": 1.5834,
+        "Experiment": 2.8214,
+        "Analysis": 1.4518,
+        "Writing": 1.1974,
+        "Review": 0.5207
+      },
+      "process_wip": {
+        "Survey": 0.1406,
+        "Hypothesis": 0.3874,
+        "Experiment": 2.7643,
+        "Analysis": 0.0,
+        "Writing": 0.3264,
+        "Review": 1.4696
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0517,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5207,
+      "cumulative_output": 10.0609,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.5207,
+      "total_rework": 10.6668,
+      "total_failures": 1.2531
+    },
+    {
+      "time_step": 15,
+      "process_throughputs": {
+        "Survey": 1.4258,
+        "Hypothesis": 1.3681,
+        "Experiment": 2.8679,
+        "Analysis": 1.2544,
+        "Writing": 1.2415,
+        "Review": 0.6056
+      },
+      "process_wip": {
+        "Survey": 0.4296,
+        "Hypothesis": 0.7871,
+        "Experiment": 0.0,
+        "Analysis": 1.1118,
+        "Writing": 0.5627,
+        "Review": 1.2486
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6056,
+      "cumulative_output": 10.6665,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.6056,
+      "total_rework": 11.4497,
+      "total_failures": 1.2531
+    },
+    {
+      "time_step": 16,
+      "process_throughputs": {
+        "Survey": 1.1156,
+        "Hypothesis": 1.1713,
+        "Experiment": 2.8886,
+        "Analysis": 1.0739,
+        "Writing": 1.2755,
+        "Review": 0.7155
+      },
+      "process_wip": {
+        "Survey": 1.0909,
+        "Hypothesis": 0.1458,
+        "Experiment": 0.0,
+        "Analysis": 1.5528,
+        "Writing": 0.0,
+        "Review": 1.2362
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0191,
+        "Review": 0.0
+      },
+      "system_throughput": 0.7155,
+      "cumulative_output": 11.382,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.7155,
+      "total_rework": 11.7718,
+      "total_failures": 1.2531
+    },
+    {
+      "time_step": 17,
+      "process_throughputs": {
+        "Survey": 0.9065,
+        "Hypothesis": 0.986,
+        "Experiment": 2.8609,
+        "Analysis": 1.0636,
+        "Writing": 1.2885,
+        "Review": 0.8312
+      },
+      "process_wip": {
+        "Survey": 2.0031,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.9512,
+        "Writing": 0.1914,
+        "Review": 0.4846
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.8312,
+      "cumulative_output": 12.2132,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.8312,
+      "total_rework": 12.0909,
+      "total_failures": 1.3517
+    },
+    {
+      "time_step": 18,
+      "process_throughputs": {
+        "Survey": 1.0035,
+        "Hypothesis": 0.8185,
+        "Experiment": 2.7939,
+        "Analysis": 0.9063,
+        "Writing": 1.2835,
+        "Review": 0.9522
+      },
+      "process_wip": {
+        "Survey": 2.7989,
+        "Hypothesis": 0.0,
+        "Experiment": 0.3192,
+        "Analysis": 0.2553,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.9522,
+      "cumulative_output": 13.1654,
+      "bottleneck_process": "Hypothesis",
+      "bottleneck_throughput": 0.8185,
+      "total_rework": 12.3365,
+      "total_failures": 1.3517
+    },
+    {
+      "time_step": 19,
+      "process_throughputs": {
+        "Survey": 1.2057,
+        "Hypothesis": 0.7711,
+        "Experiment": 2.6321,
+        "Analysis": 1.1512,
+        "Writing": 1.3924,
+        "Review": 1.0764
+      },
+      "process_wip": {
+        "Survey": 3.3521,
+        "Hypothesis": 0.1647,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 1.0764,
+      "cumulative_output": 14.2418,
+      "bottleneck_process": "Hypothesis",
+      "bottleneck_throughput": 0.7711,
+      "total_rework": 12.3365,
+      "total_failures": 1.4289
+    },
+    {
+      "time_step": 20,
+      "process_throughputs": {
+        "Survey": 1.5531,
+        "Hypothesis": 0.7159,
+        "Experiment": 2.4437,
+        "Analysis": 1.2574,
+        "Writing": 1.168,
+        "Review": 1.1993
+      },
+      "process_wip": {
+        "Survey": 3.4884,
+        "Hypothesis": 1.1809,
+        "Experiment": 0.1954,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.3508,
+      "cumulative_output": 14.5926,
+      "bottleneck_process": "Hypothesis",
+      "bottleneck_throughput": 0.7159,
+      "total_rework": 12.7016,
+      "total_failures": 1.4289
+    },
+    {
+      "time_step": 21,
+      "process_throughputs": {
+        "Survey": 1.7234,
+        "Hypothesis": 0.8763,
+        "Experiment": 2.2281,
+        "Analysis": 1.3488,
+        "Writing": 1.0863,
+        "Review": 1.2864
+      },
+      "process_wip": {
+        "Survey": 3.4202,
+        "Hypothesis": 1.5899,
+        "Experiment": 0.418,
+        "Analysis": 0.0,
+        "Writing": 0.135,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5252,
+      "cumulative_output": 15.1177,
+      "bottleneck_process": "Hypothesis",
+      "bottleneck_throughput": 0.8763,
+      "total_rework": 13.2482,
+      "total_failures": 1.4289
+    },
+    {
+      "time_step": 22,
+      "process_throughputs": {
+        "Survey": 2.2343,
+        "Hypothesis": 0.8657,
+        "Experiment": 2.1351,
+        "Analysis": 1.3562,
+        "Writing": 1.0617,
+        "Review": 1.2825
+      },
+      "process_wip": {
+        "Survey": 2.739,
+        "Hypothesis": 3.1749,
+        "Experiment": 0.3994,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.8518,
+      "cumulative_output": 15.9696,
+      "bottleneck_process": "Hypothesis",
+      "bottleneck_throughput": 0.8657,
+      "total_rework": 13.8151,
+      "total_failures": 1.4289
+    },
+    {
+      "time_step": 23,
+      "process_throughputs": {
+        "Survey": 2.8429,
+        "Hypothesis": 1.1015,
+        "Experiment": 2.0079,
+        "Analysis": 1.1378,
+        "Writing": 1.0184,
+        "Review": 1.2302
+      },
+      "process_wip": {
+        "Survey": 1.3276,
+        "Hypothesis": 4.3655,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.3027,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.7129,
+      "cumulative_output": 16.6825,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 1.0184,
+      "total_rework": 14.1206,
+      "total_failures": 1.4289
+    },
+    {
+      "time_step": 24,
+      "process_throughputs": {
+        "Survey": 3.1647,
+        "Hypothesis": 1.4101,
+        "Experiment": 1.8999,
+        "Analysis": 1.1502,
+        "Writing": 0.9829,
+        "Review": 1.0965
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 6.4726,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0393
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0147,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6881,
+      "cumulative_output": 17.3705,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.9829,
+      "total_rework": 14.8385,
+      "total_failures": 1.4289
+    },
+    {
+      "time_step": 25,
+      "process_throughputs": {
+        "Survey": 3.4899,
+        "Hypothesis": 1.7482,
+        "Experiment": 1.7809,
+        "Analysis": 1.0781,
+        "Writing": 0.9398,
+        "Review": 1.0498
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 5.8504,
+        "Experiment": 0.0,
+        "Analysis": 0.2388,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0288,
+        "Review": 0.0
+      },
+      "system_throughput": 0.9791,
+      "cumulative_output": 18.3496,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.9398,
+      "total_rework": 14.8385,
+      "total_failures": 1.4289
+    },
+    {
+      "time_step": 26,
+      "process_throughputs": {
+        "Survey": 3.8066,
+        "Hypothesis": 2.2432,
+        "Experiment": 1.6511,
+        "Analysis": 0.9995,
+        "Writing": 0.8887,
+        "Review": 1.0736
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 4.4856,
+        "Experiment": 1.3862,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0355
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0422,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6221,
+      "cumulative_output": 18.9717,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.8887,
+      "total_rework": 15.6005,
+      "total_failures": 1.5444
+    },
+    {
+      "time_step": 27,
+      "process_throughputs": {
+        "Survey": 3.5789,
+        "Hypothesis": 2.8533,
+        "Experiment": 1.5093,
+        "Analysis": 0.9397,
+        "Writing": 0.8523,
+        "Review": 1.0295
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 2.2056,
+        "Experiment": 2.2775,
+        "Analysis": 0.3252,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0529,
+        "Review": 0.0
+      },
+      "system_throughput": 0.8813,
+      "cumulative_output": 19.8531,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.8523,
+      "total_rework": 15.6005,
+      "total_failures": 1.6384
+    },
+    {
+      "time_step": 28,
+      "process_throughputs": {
+        "Survey": 3.1695,
+        "Hypothesis": 3.4188,
+        "Experiment": 1.6174,
+        "Analysis": 0.8322,
+        "Writing": 0.7699,
+        "Review": 0.93
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 4.7097,
+        "Analysis": 0.2923,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0402,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6929,
+      "cumulative_output": 20.5459,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.7699,
+      "total_rework": 16.0857,
+      "total_failures": 1.9154
+    },
+    {
+      "time_step": 29,
+      "process_throughputs": {
+        "Survey": 2.8865,
+        "Hypothesis": 3.993,
+        "Experiment": 1.6014,
+        "Analysis": 0.7268,
+        "Writing": 0.6858,
+        "Review": 0.8284
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 5.8785,
+        "Analysis": 0.2837,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0505,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6858,
+      "cumulative_output": 21.2317,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.6858,
+      "total_rework": 16.5661,
+      "total_failures": 2.0275
+    },
+    {
+      "time_step": 30,
+      "process_throughputs": {
+        "Survey": 2.3777,
+        "Hypothesis": 4.0823,
+        "Experiment": 1.9313,
+        "Analysis": 0.5592,
+        "Writing": 0.6314,
+        "Review": 0.7259
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 5.3678,
+        "Analysis": 1.8347,
+        "Writing": 0.0,
+        "Review": 0.0157
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.274,
+      "cumulative_output": 21.5058,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.5592,
+      "total_rework": 16.8513,
+      "total_failures": 2.0275
+    },
+    {
+      "time_step": 31,
+      "process_throughputs": {
+        "Survey": 2.0035,
+        "Hypothesis": 4.0468,
+        "Experiment": 2.2016,
+        "Analysis": 0.6189,
+        "Writing": 0.546,
+        "Review": 0.6238
+      },
+      "process_wip": {
+        "Survey": 0.92,
+        "Hypothesis": 0.0,
+        "Experiment": 5.4249,
+        "Analysis": 2.5093,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0082,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5616,
+      "cumulative_output": 22.0674,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.546,
+      "total_rework": 18.1118,
+      "total_failures": 2.0275
+    },
+    {
+      "time_step": 32,
+      "process_throughputs": {
+        "Survey": 1.7396,
+        "Hypothesis": 3.5138,
+        "Experiment": 2.9439,
+        "Analysis": 0.6322,
+        "Writing": 0.4574,
+        "Review": 0.5525
+      },
+      "process_wip": {
+        "Survey": 0.8325,
+        "Hypothesis": 0.0,
+        "Experiment": 3.3374,
+        "Analysis": 4.5681,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0151,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4574,
+      "cumulative_output": 22.5248,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.4574,
+      "total_rework": 18.1118,
+      "total_failures": 2.0275
+    },
+    {
+      "time_step": 33,
+      "process_throughputs": {
+        "Survey": 1.6407,
+        "Hypothesis": 2.9735,
+        "Experiment": 2.9612,
+        "Analysis": 0.7239,
+        "Writing": 0.3948,
+        "Review": 0.5271
+      },
+      "process_wip": {
+        "Survey": 0.8637,
+        "Hypothesis": 0.0,
+        "Experiment": 1.1285,
+        "Analysis": 6.6172,
+        "Writing": 0.0198,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.021,
+        "Review": 0.0
+      },
+      "system_throughput": 0.3948,
+      "cumulative_output": 22.9196,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.3948,
+      "total_rework": 18.1118,
+      "total_failures": 2.0999
+    },
+    {
+      "time_step": 34,
+      "process_throughputs": {
+        "Survey": 1.2196,
+        "Hypothesis": 2.4634,
+        "Experiment": 3.319,
+        "Analysis": 0.8113,
+        "Writing": 0.3336,
+        "Review": 0.3693
+      },
+      "process_wip": {
+        "Survey": 1.4001,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 7.8295,
+        "Writing": 0.2973,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.026,
+        "Review": 0.0
+      },
+      "system_throughput": 0.3336,
+      "cumulative_output": 23.2532,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.3336,
+      "total_rework": 18.1118,
+      "total_failures": 2.0999
+    },
+    {
+      "time_step": 35,
+      "process_throughputs": {
+        "Survey": 1.2665,
+        "Hypothesis": 2.1978,
+        "Experiment": 3.4466,
+        "Analysis": 0.9689,
+        "Writing": 0.3004,
+        "Review": 0.3628
+      },
+      "process_wip": {
+        "Survey": 1.8804,
+        "Hypothesis": 0.0,
+        "Experiment": 0.4939,
+        "Analysis": 7.3596,
+        "Writing": 1.0199,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0021,
+        "Review": 0.0
+      },
+      "system_throughput": 0.2103,
+      "cumulative_output": 23.4634,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.3004,
+      "total_rework": 18.5819,
+      "total_failures": 2.0999
+    },
+    {
+      "time_step": 36,
+      "process_throughputs": {
+        "Survey": 1.3013,
+        "Hypothesis": 1.899,
+        "Experiment": 3.9328,
+        "Analysis": 1.1448,
+        "Writing": 0.3148,
+        "Review": 0.3232
+      },
+      "process_wip": {
+        "Survey": 2.3189,
+        "Hypothesis": 0.4619,
+        "Experiment": 0.0,
+        "Analysis": 7.0706,
+        "Writing": 1.9066,
+        "Review": 0.0088
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.1542,
+      "cumulative_output": 23.6177,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.3148,
+      "total_rework": 19.1328,
+      "total_failures": 2.191
+    },
+    {
+      "time_step": 37,
+      "process_throughputs": {
+        "Survey": 1.469,
+        "Hypothesis": 1.8223,
+        "Experiment": 3.3982,
+        "Analysis": 1.6042,
+        "Writing": 0.4169,
+        "Review": 0.3164
+      },
+      "process_wip": {
+        "Survey": 2.556,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 6.6469,
+        "Writing": 2.8439,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0063,
+        "Review": 0.0
+      },
+      "system_throughput": 0.3164,
+      "cumulative_output": 23.9341,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.3164,
+      "total_rework": 19.1328,
+      "total_failures": 2.191
+    },
+    {
+      "time_step": 38,
+      "process_throughputs": {
+        "Survey": 1.6415,
+        "Hypothesis": 1.7308,
+        "Experiment": 3.2277,
+        "Analysis": 1.91,
+        "Writing": 0.4649,
+        "Review": 0.3065
+      },
+      "process_wip": {
+        "Survey": 2.5862,
+        "Hypothesis": 0.4104,
+        "Experiment": 0.0,
+        "Analysis": 5.1221,
+        "Writing": 4.01,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0132,
+        "Review": 0.0
+      },
+      "system_throughput": 0.3065,
+      "cumulative_output": 24.2405,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.3065,
+      "total_rework": 19.6253,
+      "total_failures": 2.191
+    },
+    {
+      "time_step": 39,
+      "process_throughputs": {
+        "Survey": 2.0596,
+        "Hypothesis": 1.6051,
+        "Experiment": 2.9933,
+        "Analysis": 2.3964,
+        "Writing": 0.6993,
+        "Review": 0.2609
+      },
+      "process_wip": {
+        "Survey": 2.1146,
+        "Hypothesis": 0.0623,
+        "Experiment": 0.626,
+        "Analysis": 2.8907,
+        "Writing": 5.2876,
+        "Review": 0.4817
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0237,
+        "Review": 0.0
+      },
+      "system_throughput": 0.1643,
+      "cumulative_output": 24.4049,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.2609,
+      "total_rework": 20.1851,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 40,
+      "process_throughputs": {
+        "Survey": 2.5029,
+        "Hypothesis": 1.3751,
+        "Experiment": 2.8214,
+        "Analysis": 3.705,
+        "Writing": 0.9323,
+        "Review": 0.3343
+      },
+      "process_wip": {
+        "Survey": 1.1112,
+        "Hypothesis": 0.5026,
+        "Experiment": 0.7804,
+        "Analysis": 0.0,
+        "Writing": 7.5009,
+        "Review": 0.8123
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1556,
+        "Writing": 0.116,
+        "Review": 0.0013
+      },
+      "system_throughput": 0.3343,
+      "cumulative_output": 24.7391,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.3343,
+      "total_rework": 20.7854,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 41,
+      "process_throughputs": {
+        "Survey": 2.6451,
+        "Hypothesis": 1.1789,
+        "Experiment": 2.5345,
+        "Analysis": 3.9548,
+        "Writing": 1.1557,
+        "Review": 0.3603
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 1.3794,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 7.6111,
+        "Review": 1.3195
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.2304,
+        "Review": 0.0028
+      },
+      "system_throughput": 0.3603,
+      "cumulative_output": 25.0995,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.3603,
+      "total_rework": 20.7854,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 42,
+      "process_throughputs": {
+        "Survey": 2.745,
+        "Hypothesis": 1.2819,
+        "Experiment": 2.2357,
+        "Analysis": 4.1042,
+        "Writing": 1.4069,
+        "Review": 0.4386
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 1.4566,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 6.642,
+        "Review": 1.9369
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.3697,
+        "Review": 0.0045
+      },
+      "system_throughput": 0.4386,
+      "cumulative_output": 25.5381,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.4386,
+      "total_rework": 20.7854,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 43,
+      "process_throughputs": {
+        "Survey": 2.8057,
+        "Hypothesis": 1.3102,
+        "Experiment": 2.2292,
+        "Analysis": 4.1949,
+        "Writing": 1.6867,
+        "Review": 0.5783
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 1.4912,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 5.2534,
+        "Review": 2.5827
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.5367,
+        "Review": 0.0068
+      },
+      "system_throughput": 0.5783,
+      "cumulative_output": 26.1163,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.5783,
+      "total_rework": 20.7854,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 44,
+      "process_throughputs": {
+        "Survey": 2.5097,
+        "Hypothesis": 1.3788,
+        "Experiment": 1.7374,
+        "Analysis": 3.7524,
+        "Writing": 2.0821,
+        "Review": 0.6491
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 1.423,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 3.3009,
+        "Review": 3.4964
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.7428,
+        "Review": 0.0094
+      },
+      "system_throughput": 0.6491,
+      "cumulative_output": 26.7655,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.6491,
+      "total_rework": 20.7854,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 45,
+      "process_throughputs": {
+        "Survey": 2.197,
+        "Hypothesis": 1.42,
+        "Experiment": 1.5209,
+        "Analysis": 3.2847,
+        "Writing": 2.5153,
+        "Review": 0.7842
+      },
+      "process_wip": {
+        "Survey": 0.92,
+        "Hypothesis": 0.693,
+        "Experiment": 0.5538,
+        "Analysis": 0.0,
+        "Writing": 0.2704,
+        "Review": 4.6002
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.9918,
+        "Review": 0.0126
+      },
+      "system_throughput": 0.7842,
+      "cumulative_output": 27.5496,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.7842,
+      "total_rework": 21.8114,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 46,
+      "process_throughputs": {
+        "Survey": 1.8799,
+        "Hypothesis": 1.4295,
+        "Experiment": 1.3014,
+        "Analysis": 2.8107,
+        "Writing": 2.9702,
+        "Review": 0.926
+      },
+      "process_wip": {
+        "Survey": 0.6641,
+        "Hypothesis": 1.5008,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 4.5053
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.728,
+        "Review": 0.0163
+      },
+      "system_throughput": 0.926,
+      "cumulative_output": 28.4756,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.926,
+      "total_rework": 22.2402,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 47,
+      "process_throughputs": {
+        "Survey": 1.6379,
+        "Hypothesis": 1.4653,
+        "Experiment": 1.1339,
+        "Analysis": 2.4489,
+        "Writing": 2.7033,
+        "Review": 1.1134
+      },
+      "process_wip": {
+        "Survey": 0.6986,
+        "Hypothesis": 0.9408,
+        "Experiment": 0.7736,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 4.2302
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.2337,
+        "Review": 0.0
+      },
+      "system_throughput": 0.7794,
+      "cumulative_output": 29.255,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 1.1134,
+      "total_rework": 22.9144,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 48,
+      "process_throughputs": {
+        "Survey": 1.405,
+        "Hypothesis": 1.4787,
+        "Experiment": 0.9726,
+        "Analysis": 2.1006,
+        "Writing": 3.1964,
+        "Review": 1.3179
+      },
+      "process_wip": {
+        "Survey": 1.0126,
+        "Hypothesis": 0.1278,
+        "Experiment": 1.659,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 3.6458
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.9225,
+      "cumulative_output": 30.1775,
+      "bottleneck_process": "Experiment",
+      "bottleneck_throughput": 0.9726,
+      "total_rework": 23.6016,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 49,
+      "process_throughputs": {
+        "Survey": 1.4099,
+        "Hypothesis": 1.4838,
+        "Experiment": 0.976,
+        "Analysis": 1.7918,
+        "Writing": 2.781,
+        "Review": 1.5513
+      },
+      "process_wip": {
+        "Survey": 1.3208,
+        "Hypothesis": 0.0,
+        "Experiment": 2.5474,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 1.5366
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0062
+      },
+      "system_throughput": 1.5513,
+      "cumulative_output": 31.7288,
+      "bottleneck_process": "Experiment",
+      "bottleneck_throughput": 0.976,
+      "total_rework": 23.8944,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 50,
+      "process_throughputs": {
+        "Survey": 1.393,
+        "Hypothesis": 1.4661,
+        "Experiment": 0.9643,
+        "Analysis": 1.5048,
+        "Writing": 2.3823,
+        "Review": 1.7979
+      },
+      "process_wip": {
+        "Survey": 2.5685,
+        "Hypothesis": 0.0,
+        "Experiment": 2.9343,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0134
+      },
+      "system_throughput": 1.7979,
+      "cumulative_output": 33.5268,
+      "bottleneck_process": "Experiment",
+      "bottleneck_throughput": 0.9643,
+      "total_rework": 24.6016,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 51,
+      "process_throughputs": {
+        "Survey": 1.3552,
+        "Hypothesis": 1.4263,
+        "Experiment": 0.9382,
+        "Analysis": 1.2444,
+        "Writing": 2.0095,
+        "Review": 2.0518
+      },
+      "process_wip": {
+        "Survey": 2.9422,
+        "Hypothesis": 0.0,
+        "Experiment": 3.7172,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6567,
+      "cumulative_output": 34.1835,
+      "bottleneck_process": "Experiment",
+      "bottleneck_throughput": 0.9382,
+      "total_rework": 24.883,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 52,
+      "process_throughputs": {
+        "Survey": 1.3758,
+        "Hypothesis": 1.2307,
+        "Experiment": 1.0953,
+        "Analysis": 1.0737,
+        "Writing": 1.7686,
+        "Review": 2.1245
+      },
+      "process_wip": {
+        "Survey": 3.2913,
+        "Hypothesis": 0.0,
+        "Experiment": 3.5241,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0451,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 1.0737,
+      "cumulative_output": 35.2572,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 1.0737,
+      "total_rework": 24.883,
+      "total_failures": 2.2092
+    },
+    {
+      "time_step": 53,
+      "process_throughputs": {
+        "Survey": 1.5937,
+        "Hypothesis": 1.0424,
+        "Experiment": 1.255,
+        "Analysis": 0.9094,
+        "Writing": 1.5278,
+        "Review": 2.1592
+      },
+      "process_wip": {
+        "Survey": 3.3789,
+        "Hypothesis": 0.1865,
+        "Experiment": 2.8307,
+        "Analysis": 0.0,
+        "Writing": 0.1637,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0833,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6366,
+      "cumulative_output": 35.8938,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.9094,
+      "total_rework": 25.1559,
+      "total_failures": 2.3135
+    },
+    {
+      "time_step": 54,
+      "process_throughputs": {
+        "Survey": 1.9186,
+        "Hypothesis": 0.9377,
+        "Experiment": 1.5274,
+        "Analysis": 0.818,
+        "Writing": 1.4018,
+        "Review": 2.2113
+      },
+      "process_wip": {
+        "Survey": 3.0766,
+        "Hypothesis": 0.6986,
+        "Experiment": 1.7828,
+        "Analysis": 0.3821,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1176,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.9817,
+      "cumulative_output": 36.8755,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.818,
+      "total_rework": 25.1559,
+      "total_failures": 2.3135
+    },
+    {
+      "time_step": 55,
+      "process_throughputs": {
+        "Survey": 3.2093,
+        "Hypothesis": 1.1143,
+        "Experiment": 1.825,
+        "Analysis": 0.7224,
+        "Writing": 1.5969,
+        "Review": 1.884
+      },
+      "process_wip": {
+        "Survey": 1.2255,
+        "Hypothesis": 2.2365,
+        "Experiment": 1.9499,
+        "Analysis": 0.5205,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.148,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6502,
+      "cumulative_output": 37.5257,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.7224,
+      "total_rework": 25.7034,
+      "total_failures": 2.5135
+    },
+    {
+      "time_step": 56,
+      "process_throughputs": {
+        "Survey": 3.2805,
+        "Hypothesis": 1.185,
+        "Experiment": 2.1453,
+        "Analysis": 0.6277,
+        "Writing": 1.5279,
+        "Review": 1.5816
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 3.6844,
+        "Experiment": 0.6249,
+        "Analysis": 1.5725,
+        "Writing": 0.2184,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1744,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4394,
+      "cumulative_output": 37.9651,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.6277,
+      "total_rework": 25.8917,
+      "total_failures": 2.728
+    },
+    {
+      "time_step": 57,
+      "process_throughputs": {
+        "Survey": 2.9762,
+        "Hypothesis": 1.2582,
+        "Experiment": 2.2778,
+        "Analysis": 0.6665,
+        "Writing": 1.3029,
+        "Review": 1.5615
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 3.797,
+        "Experiment": 0.0,
+        "Analysis": 2.3342,
+        "Writing": 0.308,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.2023,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6194,
+      "cumulative_output": 38.5846,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.6665,
+      "total_rework": 26.1571,
+      "total_failures": 2.9163
+    },
+    {
+      "time_step": 58,
+      "process_throughputs": {
+        "Survey": 3.6404,
+        "Hypothesis": 1.5123,
+        "Experiment": 2.3656,
+        "Analysis": 0.6966,
+        "Writing": 1.1806,
+        "Review": 1.3193
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 4.6628,
+        "Experiment": 0.4129,
+        "Analysis": 2.1001,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.2316,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 1.0045,
+      "cumulative_output": 39.5891,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.6966,
+      "total_rework": 26.9284,
+      "total_failures": 2.9163
+    },
+    {
+      "time_step": 59,
+      "process_throughputs": {
+        "Survey": 3.244,
+        "Hypothesis": 1.9336,
+        "Experiment": 2.4958,
+        "Analysis": 0.8398,
+        "Writing": 1.0731,
+        "Review": 1.1992
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 3.7624,
+        "Experiment": 0.0,
+        "Analysis": 3.8755,
+        "Writing": 0.0,
+        "Review": 0.1881
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1807,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4115,
+      "cumulative_output": 40.0006,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.8398,
+      "total_rework": 27.3567,
+      "total_failures": 2.9163
+    },
+    {
+      "time_step": 60,
+      "process_throughputs": {
+        "Survey": 3.3808,
+        "Hypothesis": 2.0551,
+        "Experiment": 2.3656,
+        "Analysis": 1.0769,
+        "Writing": 1.0374,
+        "Review": 1.1593
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 4.2211,
+        "Experiment": 0.0,
+        "Analysis": 3.8064,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.2259,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 1.1593,
+      "cumulative_output": 41.1599,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 1.0374,
+      "total_rework": 27.9732,
+      "total_failures": 2.9163
+    },
+    {
+      "time_step": 61,
+      "process_throughputs": {
+        "Survey": 2.8777,
+        "Hypothesis": 2.9605,
+        "Experiment": 2.214,
+        "Analysis": 1.5049,
+        "Writing": 0.9903,
+        "Review": 1.1067
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 1.7803,
+        "Experiment": 0.0824,
+        "Analysis": 4.1242,
+        "Writing": 0.0076,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.2377,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.9903,
+      "cumulative_output": 42.1502,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.9903,
+      "total_rework": 27.9732,
+      "total_failures": 3.0668
+    },
+    {
+      "time_step": 62,
+      "process_throughputs": {
+        "Survey": 2.6529,
+        "Hypothesis": 3.6926,
+        "Experiment": 2.0411,
+        "Analysis": 1.8895,
+        "Writing": 0.9312,
+        "Review": 1.0407
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 1.0109,
+        "Experiment": 1.4221,
+        "Analysis": 2.9076,
+        "Writing": 0.6306,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.317,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.8381,
+      "cumulative_output": 42.9884,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.9312,
+      "total_rework": 29.6933,
+      "total_failures": 3.1599
+    },
+    {
+      "time_step": 63,
+      "process_throughputs": {
+        "Survey": 2.2288,
+        "Hypothesis": 4.0677,
+        "Experiment": 1.9111,
+        "Analysis": 2.1546,
+        "Writing": 0.8894,
+        "Review": 0.9939
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 1.9485,
+        "Analysis": 1.8023,
+        "Writing": 1.5756,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.4075,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.8894,
+      "cumulative_output": 43.8778,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.8894,
+      "total_rework": 29.6933,
+      "total_failures": 3.1599
+    },
+    {
+      "time_step": 64,
+      "process_throughputs": {
+        "Survey": 2.0318,
+        "Hypothesis": 4.1621,
+        "Experiment": 1.9555,
+        "Analysis": 2.5353,
+        "Writing": 0.9283,
+        "Review": 0.9471
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 1.4063,
+        "Analysis": 2.0337,
+        "Writing": 2.8335,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.2539,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5848,
+      "cumulative_output": 44.4626,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.9283,
+      "total_rework": 30.7324,
+      "total_failures": 3.2249
+    },
+    {
+      "time_step": 65,
+      "process_throughputs": {
+        "Survey": 1.8656,
+        "Hypothesis": 4.2282,
+        "Experiment": 1.9866,
+        "Analysis": 2.9619,
+        "Writing": 0.9619,
+        "Review": 0.7358
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 2.0601,
+        "Analysis": 0.0,
+        "Writing": 4.4873,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.3783,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.7358,
+      "cumulative_output": 45.1984,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.7358,
+      "total_rework": 31.3284,
+      "total_failures": 3.2249
+    },
+    {
+      "time_step": 66,
+      "process_throughputs": {
+        "Survey": 1.6737,
+        "Hypothesis": 3.7933,
+        "Experiment": 2.0968,
+        "Analysis": 3.1262,
+        "Writing": 1.1909,
+        "Review": 0.7107
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 2.4548,
+        "Analysis": 0.0,
+        "Writing": 4.3354,
+        "Review": 0.1959
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.7107,
+      "cumulative_output": 45.9091,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.7107,
+      "total_rework": 31.9574,
+      "total_failures": 3.2249
+    },
+    {
+      "time_step": 67,
+      "process_throughputs": {
+        "Survey": 1.4874,
+        "Hypothesis": 3.371,
+        "Experiment": 2.1921,
+        "Analysis": 3.2685,
+        "Writing": 1.4604,
+        "Review": 0.6442
+      },
+      "process_wip": {
+        "Survey": 0.2152,
+        "Hypothesis": 0.0,
+        "Experiment": 2.8044,
+        "Analysis": 0.0,
+        "Writing": 3.7303,
+        "Review": 0.7545
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6442,
+      "cumulative_output": 46.5532,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.6442,
+      "total_rework": 32.615,
+      "total_failures": 3.3783
+    },
+    {
+      "time_step": 68,
+      "process_throughputs": {
+        "Survey": 1.3388,
+        "Hypothesis": 3.3362,
+        "Experiment": 2.575,
+        "Analysis": 2.9419,
+        "Writing": 1.814,
+        "Review": 0.5914
+      },
+      "process_wip": {
+        "Survey": 0.6086,
+        "Hypothesis": 0.0,
+        "Experiment": 0.7957,
+        "Analysis": 0.0,
+        "Writing": 3.8382,
+        "Review": 2.1663
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.414,
+      "cumulative_output": 46.9672,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.5914,
+      "total_rework": 32.7925,
+      "total_failures": 3.3783
+    },
+    {
+      "time_step": 69,
+      "process_throughputs": {
+        "Survey": 1.1671,
+        "Hypothesis": 2.6452,
+        "Experiment": 2.3809,
+        "Analysis": 2.5648,
+        "Writing": 2.1824,
+        "Review": 0.6187
+      },
+      "process_wip": {
+        "Survey": 1.2081,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 2.8329,
+        "Review": 3.5692
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5568,
+      "cumulative_output": 47.5241,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.6187,
+      "total_rework": 32.7925,
+      "total_failures": 3.4402
+    },
+    {
+      "time_step": 70,
+      "process_throughputs": {
+        "Survey": 1.0387,
+        "Hypothesis": 2.2346,
+        "Experiment": 2.3662,
+        "Analysis": 2.1666,
+        "Writing": 2.5442,
+        "Review": 0.7213
+      },
+      "process_wip": {
+        "Survey": 1.9616,
+        "Hypothesis": 0.2597,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0999,
+        "Review": 5.1036
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.7213,
+      "cumulative_output": 48.2454,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.7213,
+      "total_rework": 33.1041,
+      "total_failures": 3.4402
+    },
+    {
+      "time_step": 71,
+      "process_throughputs": {
+        "Survey": 0.9618,
+        "Hypothesis": 1.8529,
+        "Experiment": 2.3082,
+        "Analysis": 1.7965,
+        "Writing": 2.9112,
+        "Review": 0.8253
+      },
+      "process_wip": {
+        "Survey": 2.8075,
+        "Hypothesis": 0.0,
+        "Experiment": 0.4764,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 5.4973
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5777,
+      "cumulative_output": 48.8231,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.8253,
+      "total_rework": 33.7181,
+      "total_failures": 3.4402
+    },
+    {
+      "time_step": 72,
+      "process_throughputs": {
+        "Survey": 0.9547,
+        "Hypothesis": 1.5633,
+        "Experiment": 2.2912,
+        "Analysis": 1.5158,
+        "Writing": 2.8032,
+        "Review": 0.961
+      },
+      "process_wip": {
+        "Survey": 3.6618,
+        "Hypothesis": 0.2387,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 5.2966
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.961,
+      "cumulative_output": 49.7841,
+      "bottleneck_process": "Survey",
+      "bottleneck_throughput": 0.9547,
+      "total_rework": 34.0045,
+      "total_failures": 3.4402
+    },
+    {
+      "time_step": 73,
+      "process_throughputs": {
+        "Survey": 1.1443,
+        "Hypothesis": 1.385,
+        "Experiment": 2.0299,
+        "Analysis": 1.3429,
+        "Writing": 3.1337,
+        "Review": 1.1749
+      },
+      "process_wip": {
+        "Survey": 4.2886,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 4.9946
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0564,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 1.1749,
+      "cumulative_output": 50.959,
+      "bottleneck_process": "Survey",
+      "bottleneck_throughput": 1.1443,
+      "total_rework": 34.0045,
+      "total_failures": 3.4402
+    },
+    {
+      "time_step": 74,
+      "process_throughputs": {
+        "Survey": 1.3943,
+        "Hypothesis": 1.2473,
+        "Experiment": 1.8281,
+        "Analysis": 1.2094,
+        "Writing": 2.8785,
+        "Review": 1.4602
+      },
+      "process_wip": {
+        "Survey": 4.6155,
+        "Hypothesis": 0.0,
+        "Experiment": 0.4865,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 3.8235
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 1.4602,
+      "cumulative_output": 52.4192,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 1.2094,
+      "total_rework": 34.3787,
+      "total_failures": 3.4402
+    },
+    {
+      "time_step": 75,
+      "process_throughputs": {
+        "Survey": 1.4386,
+        "Hypothesis": 1.0985,
+        "Experiment": 1.6099,
+        "Analysis": 1.065,
+        "Writing": 2.5857,
+        "Review": 2.0039
+      },
+      "process_wip": {
+        "Survey": 4.8891,
+        "Hypothesis": 0.0,
+        "Experiment": 0.6181,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 3.7222
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0447,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 1.2625,
+      "cumulative_output": 53.6816,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 1.065,
+      "total_rework": 35.4554,
+      "total_failures": 3.5805
+    },
+    {
+      "time_step": 76,
+      "process_throughputs": {
+        "Survey": 1.9325,
+        "Hypothesis": 0.9445,
+        "Experiment": 1.3842,
+        "Analysis": 0.9157,
+        "Writing": 2.2677,
+        "Review": 2.1056
+      },
+      "process_wip": {
+        "Survey": 4.5702,
+        "Hypothesis": 1.2241,
+        "Experiment": 0.0,
+        "Analysis": 0.6566,
+        "Writing": 0.0,
+        "Review": 1.3514
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 2.1056,
+      "cumulative_output": 55.7872,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.9157,
+      "total_rework": 36.0134,
+      "total_failures": 3.6446
+    },
+    {
+      "time_step": 77,
+      "process_throughputs": {
+        "Survey": 2.1934,
+        "Hypothesis": 0.7923,
+        "Experiment": 1.1613,
+        "Analysis": 0.7682,
+        "Writing": 1.9405,
+        "Review": 2.4377
+      },
+      "process_wip": {
+        "Survey": 3.938,
+        "Hypothesis": 2.8233,
+        "Experiment": 0.0,
+        "Analysis": 0.1357,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0323,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 2.1196,
+      "cumulative_output": 57.9068,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.7682,
+      "total_rework": 36.2511,
+      "total_failures": 3.6446
+    },
+    {
+      "time_step": 78,
+      "process_throughputs": {
+        "Survey": 2.6246,
+        "Hypothesis": 0.7587,
+        "Experiment": 0.9452,
+        "Analysis": 0.6253,
+        "Writing": 1.6111,
+        "Review": 2.7382
+      },
+      "process_wip": {
+        "Survey": 2.7885,
+        "Hypothesis": 4.3098,
+        "Experiment": 0.2959,
+        "Analysis": 0.0,
+        "Writing": 0.0,
+        "Review": 0.2001
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0585,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4377,
+      "cumulative_output": 58.3445,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.6253,
+      "total_rework": 36.6664,
+      "total_failures": 3.6446
+    },
+    {
+      "time_step": 79,
+      "process_throughputs": {
+        "Survey": 2.8256,
+        "Hypothesis": 0.8876,
+        "Experiment": 0.7436,
+        "Analysis": 0.611,
+        "Writing": 1.4208,
+        "Review": 2.841
+      },
+      "process_wip": {
+        "Survey": 1.3978,
+        "Hypothesis": 5.804,
+        "Experiment": 0.2168,
+        "Analysis": 0.0,
+        "Writing": 0.2126,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.0842,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6278,
+      "cumulative_output": 58.9723,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.611,
+      "total_rework": 36.8496,
+      "total_failures": 3.6446
+    },
+    {
+      "time_step": 80,
+      "process_throughputs": {
+        "Survey": 3.2757,
+        "Hypothesis": 1.0289,
+        "Experiment": 0.7003,
+        "Analysis": 0.4633,
+        "Writing": 1.2418,
+        "Review": 2.9212
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 7.5363,
+        "Experiment": 0.3354,
+        "Analysis": 0.0517,
+        "Writing": 0.2352,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1036,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4731,
+      "cumulative_output": 59.4454,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.4633,
+      "total_rework": 37.0524,
+      "total_failures": 3.6446
+    },
+    {
+      "time_step": 81,
+      "process_throughputs": {
+        "Survey": 3.6713,
+        "Hypothesis": 1.3262,
+        "Experiment": 0.6671,
+        "Analysis": 0.4903,
+        "Writing": 1.2067,
+        "Review": 2.8385
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 7.547,
+        "Experiment": 0.7944,
+        "Analysis": 0.0323,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1242,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.7255,
+      "cumulative_output": 60.1709,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.4903,
+      "total_rework": 37.0524,
+      "total_failures": 3.6446
+    },
+    {
+      "time_step": 82,
+      "process_throughputs": {
+        "Survey": 3.4869,
+        "Hypothesis": 1.6646,
+        "Experiment": 0.7281,
+        "Analysis": 0.4094,
+        "Writing": 1.1419,
+        "Review": 2.6861
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 7.0501,
+        "Experiment": 1.5124,
+        "Analysis": 0.1873,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1414,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4094,
+      "cumulative_output": 60.5804,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.4094,
+      "total_rework": 37.0524,
+      "total_failures": 3.6446
+    },
+    {
+      "time_step": 83,
+      "process_throughputs": {
+        "Survey": 3.7512,
+        "Hypothesis": 2.1083,
+        "Experiment": 0.8019,
+        "Analysis": 0.3833,
+        "Writing": 1.0903,
+        "Review": 2.5649
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 5.8876,
+        "Experiment": 2.5782,
+        "Analysis": 0.4526,
+        "Writing": 0.1334,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1575,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.2683,
+      "cumulative_output": 60.8487,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.3833,
+      "total_rework": 37.1674,
+      "total_failures": 3.6446
+    },
+    {
+      "time_step": 84,
+      "process_throughputs": {
+        "Survey": 3.4684,
+        "Hypothesis": 2.6708,
+        "Experiment": 0.8723,
+        "Analysis": 0.4169,
+        "Writing": 1.0283,
+        "Review": 2.4189
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 3.8814,
+        "Experiment": 4.7169,
+        "Analysis": 0.5378,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1608,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5086,
+      "cumulative_output": 61.3573,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.4169,
+      "total_rework": 37.4291,
+      "total_failures": 3.6863
+    },
+    {
+      "time_step": 85,
+      "process_throughputs": {
+        "Survey": 3.0942,
+        "Hypothesis": 3.1833,
+        "Experiment": 1.0529,
+        "Analysis": 0.4376,
+        "Writing": 0.9357,
+        "Review": 2.2011
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 3.494,
+        "Experiment": 5.5765,
+        "Analysis": 0.9781,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.1792,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4376,
+      "cumulative_output": 61.7949,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.4376,
+      "total_rework": 38.3841,
+      "total_failures": 3.6863
+    },
+    {
+      "time_step": 86,
+      "process_throughputs": {
+        "Survey": 2.7096,
+        "Hypothesis": 3.7714,
+        "Experiment": 1.2474,
+        "Analysis": 0.4,
+        "Writing": 0.8358,
+        "Review": 1.966
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 7.7262,
+        "Analysis": 1.6654,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.196,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4,
+      "cumulative_output": 62.1949,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.4,
+      "total_rework": 38.3841,
+      "total_failures": 3.6863
+    },
+    {
+      "time_step": 87,
+      "process_throughputs": {
+        "Survey": 2.3197,
+        "Hypothesis": 4.3684,
+        "Experiment": 1.4448,
+        "Analysis": 0.5222,
+        "Writing": 0.7298,
+        "Review": 1.7168
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 8.9764,
+        "Analysis": 1.8446,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.2179,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5222,
+      "cumulative_output": 62.7171,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.5222,
+      "total_rework": 38.8175,
+      "total_failures": 3.7874
+    },
+    {
+      "time_step": 88,
+      "process_throughputs": {
+        "Survey": 2.0179,
+        "Hypothesis": 4.4707,
+        "Experiment": 1.7005,
+        "Analysis": 0.6146,
+        "Writing": 0.6476,
+        "Review": 1.5234
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.71,
+        "Experiment": 8.0257,
+        "Analysis": 2.6847,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.2437,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.6146,
+      "cumulative_output": 63.3317,
+      "bottleneck_process": "Analysis",
+      "bottleneck_throughput": 0.6146,
+      "total_rework": 39.4175,
+      "total_failures": 3.9274
+    },
+    {
+      "time_step": 89,
+      "process_throughputs": {
+        "Survey": 1.729,
+        "Hypothesis": 4.5066,
+        "Experiment": 1.9713,
+        "Analysis": 0.7125,
+        "Writing": 0.566,
+        "Review": 1.3314
+      },
+      "process_wip": {
+        "Survey": 0.0,
+        "Hypothesis": 0.6098,
+        "Experiment": 7.1704,
+        "Analysis": 3.6585,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.2736,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.566,
+      "cumulative_output": 63.8977,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.566,
+      "total_rework": 40.1492,
+      "total_failures": 3.9274
+    },
+    {
+      "time_step": 90,
+      "process_throughputs": {
+        "Survey": 1.515,
+        "Hypothesis": 3.9486,
+        "Experiment": 2.3368,
+        "Analysis": 0.8446,
+        "Writing": 0.5058,
+        "Review": 1.3488
+      },
+      "process_wip": {
+        "Survey": 0.1821,
+        "Hypothesis": 0.0,
+        "Experiment": 7.8697,
+        "Analysis": 4.1119,
+        "Writing": 0.1567,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.3091,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5058,
+      "cumulative_output": 64.4035,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.5058,
+      "total_rework": 40.8503,
+      "total_failures": 3.9274
+    },
+    {
+      "time_step": 91,
+      "process_throughputs": {
+        "Survey": 1.2997,
+        "Hypothesis": 3.3875,
+        "Experiment": 2.7123,
+        "Analysis": 0.9803,
+        "Writing": 0.4426,
+        "Review": 1.0412
+      },
+      "process_wip": {
+        "Survey": 0.6224,
+        "Hypothesis": 0.3249,
+        "Experiment": 5.2535,
+        "Analysis": 5.4518,
+        "Writing": 0.8483,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.3503,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.3098,
+      "cumulative_output": 64.7133,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.4426,
+      "total_rework": 41.373,
+      "total_failures": 3.9274
+    },
+    {
+      "time_step": 92,
+      "process_throughputs": {
+        "Survey": 1.0865,
+        "Hypothesis": 2.8318,
+        "Experiment": 3.0675,
+        "Analysis": 1.1087,
+        "Writing": 0.444,
+        "Review": 0.8878
+      },
+      "process_wip": {
+        "Survey": 2.0358,
+        "Hypothesis": 0.0,
+        "Experiment": 2.3511,
+        "Analysis": 6.9672,
+        "Writing": 1.3532,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.3968,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.444,
+      "cumulative_output": 65.1573,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.444,
+      "total_rework": 41.6989,
+      "total_failures": 3.9274
+    },
+    {
+      "time_step": 93,
+      "process_throughputs": {
+        "Survey": 1.0434,
+        "Hypothesis": 2.3115,
+        "Experiment": 3.3877,
+        "Analysis": 1.2244,
+        "Writing": 0.4349,
+        "Review": 0.7392
+      },
+      "process_wip": {
+        "Survey": 2.7837,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 8.6408,
+        "Writing": 2.294,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.4483,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.3044,
+      "cumulative_output": 65.4618,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.4349,
+      "total_rework": 41.8294,
+      "total_failures": 3.9274
+    },
+    {
+      "time_step": 94,
+      "process_throughputs": {
+        "Survey": 0.9808,
+        "Hypothesis": 1.8469,
+        "Experiment": 3.6621,
+        "Analysis": 1.3236,
+        "Writing": 0.4795,
+        "Review": 0.6024
+      },
+      "process_wip": {
+        "Survey": 3.6068,
+        "Hypothesis": 0.2452,
+        "Experiment": 0.2677,
+        "Analysis": 8.3511,
+        "Writing": 2.4757,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.3364,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4795,
+      "cumulative_output": 65.9413,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.4795,
+      "total_rework": 42.7266,
+      "total_failures": 4.0201
+    },
+    {
+      "time_step": 95,
+      "process_throughputs": {
+        "Survey": 1.1435,
+        "Hypothesis": 1.5917,
+        "Experiment": 3.713,
+        "Analysis": 1.5433,
+        "Writing": 0.5084,
+        "Review": 0.5296
+      },
+      "process_wip": {
+        "Survey": 4.2346,
+        "Hypothesis": 0.0,
+        "Experiment": 0.646,
+        "Analysis": 7.35,
+        "Writing": 3.3275,
+        "Review": 0.0
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.4012,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.5084,
+      "cumulative_output": 66.4497,
+      "bottleneck_process": "Writing",
+      "bottleneck_throughput": 0.5084,
+      "total_rework": 43.2236,
+      "total_failures": 4.0201
+    },
+    {
+      "time_step": 96,
+      "process_throughputs": {
+        "Survey": 1.3235,
+        "Hypothesis": 1.3615,
+        "Experiment": 3.7367,
+        "Analysis": 1.786,
+        "Writing": 0.6732,
+        "Review": 0.462
+      },
+      "process_wip": {
+        "Survey": 4.6464,
+        "Hypothesis": 0.0,
+        "Experiment": 0.7681,
+        "Analysis": 6.2282,
+        "Writing": 4.1979,
+        "Review": 0.0264
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.4762,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.462,
+      "cumulative_output": 66.9117,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.462,
+      "total_rework": 43.8144,
+      "total_failures": 4.0201
+    },
+    {
+      "time_step": 97,
+      "process_throughputs": {
+        "Survey": 1.6885,
+        "Hypothesis": 1.284,
+        "Experiment": 3.5238,
+        "Analysis": 2.2787,
+        "Writing": 0.8761,
+        "Review": 0.4444
+      },
+      "process_wip": {
+        "Survey": 4.6202,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 5.0901,
+        "Writing": 5.2851,
+        "Review": 0.2803
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.5719,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4444,
+      "cumulative_output": 67.3562,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.4444,
+      "total_rework": 43.8144,
+      "total_failures": 4.0201
+    },
+    {
+      "time_step": 98,
+      "process_throughputs": {
+        "Survey": 2.1213,
+        "Hypothesis": 1.1922,
+        "Experiment": 3.272,
+        "Analysis": 2.8627,
+        "Writing": 1.0935,
+        "Review": 0.4209
+      },
+      "process_wip": {
+        "Survey": 4.0747,
+        "Hypothesis": 1.2271,
+        "Experiment": 0.0,
+        "Analysis": 1.9168,
+        "Writing": 6.6606,
+        "Review": 0.7845
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.6921,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4209,
+      "cumulative_output": 67.7771,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.4209,
+      "total_rework": 44.1721,
+      "total_failures": 4.0201
+    },
+    {
+      "time_step": 99,
+      "process_throughputs": {
+        "Survey": 2.579,
+        "Hypothesis": 1.0714,
+        "Experiment": 2.9403,
+        "Analysis": 3.4805,
+        "Writing": 1.3923,
+        "Review": 0.4539
+      },
+      "process_wip": {
+        "Survey": 2.9798,
+        "Hypothesis": 3.0026,
+        "Experiment": 0.2925,
+        "Analysis": 0.0,
+        "Writing": 7.2089,
+        "Review": 1.5413
+      },
+      "process_backlogs": {
+        "Survey": 0.0,
+        "Hypothesis": 0.0,
+        "Experiment": 0.0,
+        "Analysis": 0.4831,
+        "Writing": 0.0,
+        "Review": 0.0
+      },
+      "system_throughput": 0.4539,
+      "cumulative_output": 68.231,
+      "bottleneck_process": "Review",
+      "bottleneck_throughput": 0.4539,
+      "total_rework": 44.7185,
+      "total_failures": 4.0201
+    }
+  ],
+  "optimization_actions": [
+    {
+      "time_step": 7,
+      "target": "system",
+      "type": "Stage2-Transition",
+      "description": "Adaptive transition to Stage 2 at step 7"
+    },
+    {
+      "time_step": 40,
+      "target": "system",
+      "type": "Stage3-Transition",
+      "description": "Adaptive transition to Stage 3 at step 40"
+    },
+    {
+      "time_step": 40,
+      "target": "Survey",
+      "type": "Adaptive-Prune",
+      "description": "Pruned: uncertainty 0.20\u21920.13, failure_rate reduced 20%"
+    },
+    {
+      "time_step": 40,
+      "target": "Hypothesis",
+      "type": "Adaptive-Prune",
+      "description": "Pruned: uncertainty 0.40\u21920.26, failure_rate reduced 20%"
+    },
+    {
+      "time_step": 40,
+      "target": "Analysis",
+      "type": "Adaptive-Prune",
+      "description": "Pruned: uncertainty 0.30\u21920.20, failure_rate reduced 20%"
+    },
+    {
+      "time_step": 40,
+      "target": "Writing",
+      "type": "Adaptive-Prune",
+      "description": "Pruned: uncertainty 0.30\u21920.20, failure_rate reduced 20%"
+    },
+    {
+      "time_step": 55,
+      "target": "system",
+      "type": "Stage4-Transition",
+      "description": "Adaptive transition to Stage 4 at step 55"
+    },
+    {
+      "time_step": 55,
+      "target": "system",
+      "type": "Adaptive-Meta",
+      "description": "Meta-optimization: parallelization, Writing fix, Review reduction"
+    }
+  ],
+  "final_state": {
+    "Survey": {
+      "throughput": 2.579,
+      "completed_units": 180.0359,
+      "failed_units": 0.4,
+      "rework_units": 3.1438,
+      "human_review_backlog": 0.0,
+      "ai_assistance_level": 0.76,
+      "allocated_resources": 0.4157
+    },
+    "Hypothesis": {
+      "throughput": 1.0714,
+      "completed_units": 145.3719,
+      "failed_units": 0.6183,
+      "rework_units": 12.4627,
+      "human_review_backlog": 0.0,
+      "ai_assistance_level": 0.57,
+      "allocated_resources": 0.3533
+    },
+    "Experiment": {
+      "throughput": 2.9403,
+      "completed_units": 133.922,
+      "failed_units": 1.5852,
+      "rework_units": 17.2576,
+      "human_review_backlog": 0.0,
+      "ai_assistance_level": 0.285,
+      "allocated_resources": 3.1387
+    },
+    "Analysis": {
+      "throughput": 3.4805,
+      "completed_units": 112.6276,
+      "failed_units": 0.6639,
+      "rework_units": 3.0689,
+      "human_review_backlog": 0.4831,
+      "ai_assistance_level": 0.855,
+      "allocated_resources": 0.9187
+    },
+    "Writing": {
+      "throughput": 1.3923,
+      "completed_units": 86.1529,
+      "failed_units": 0.3089,
+      "rework_units": 5.2586,
+      "human_review_backlog": 0.0,
+      "ai_assistance_level": 0.665,
+      "allocated_resources": 0.5935
+    },
+    "Review": {
+      "throughput": 0.4539,
+      "completed_units": 68.231,
+      "failed_units": 0.4438,
+      "rework_units": 3.5268,
+      "human_review_backlog": 0.0,
+      "ai_assistance_level": 0.38,
+      "allocated_resources": 0.5802
+    }
+  }
+}
