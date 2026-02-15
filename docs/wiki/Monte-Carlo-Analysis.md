@@ -214,5 +214,14 @@ Delayed と Noisy は Oracle と統計的に差がない。つまり、**遅延�
 
 ---
 
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [結果の詳細解釈](./Results-Analysis.md) | [論文との対応関係](./Paper-Mapping.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [AI優越世界での課題変化](./AI-Superior-World-Analysis.md)
+- [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md) | [今後の発展](./Future-Work.md)
+
+---
+
 *実装: `poc/src/run_monte_carlo.py`*
 *データ: `poc/results/figures_mc/monte_carlo_raw.json`*

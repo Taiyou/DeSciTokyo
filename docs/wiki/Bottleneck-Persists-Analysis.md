@@ -225,5 +225,14 @@ graph LR
 
 ---
 
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [結果の詳細解釈](./Results-Analysis.md) | [論文との対応関係](./Paper-Mapping.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [AI優越世界での課題変化](./AI-Superior-World-Analysis.md)
+- [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [今後の発展](./Future-Work.md)
+
+---
+
 *実装: `poc/src/run_bottleneck_persists.py`, `poc/src/run_monte_carlo_3worlds.py`*
 *データ: `poc/results/figures_mc3/monte_carlo_3worlds_raw.json`*

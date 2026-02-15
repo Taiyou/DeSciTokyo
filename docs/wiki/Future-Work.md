@@ -1,5 +1,41 @@
 # 今後の発展
 
+## 実施済みの改善
+
+以下の項目は当初「今後の課題」として挙げられていたが、既に実施済みである。
+
+### 感度分析 → モンテカルロ統計検証（実施済み）
+
+> **100シード × 7バリアント × 3世界 = 2,100回のシミュレーション**を実施し、単一シードの結論を統計的に検証した。
+
+- seed=42の結論が部分的に覆った（現在の世界でTrustDecay最良→Oracle最良に修正）
+- Welchのt検定、95%信頼区間、勝率分析を実装
+- → 詳細: [モンテカルロ実験](./Monte-Carlo-Analysis.md)
+
+### ボトルネック残存世界の分析（実施済み）
+
+> AIが優秀でも人間レビューが制度上必須な場合のシナリオを追加検証。
+
+- 3世界比較フレームワーク（現在・BN残存・AI優越）を構築
+- AI能力向上 vs ボトルネック撤廃のゲイン分解を実施
+- → 詳細: [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)
+
+```mermaid
+graph LR
+    subgraph Done["✅ 実施済み"]
+        D1["感度分析<br/>(MC N=100)"]
+        D2["BN残存世界"]
+        D3["3世界比較"]
+    end
+    subgraph Remain["📋 未実施"]
+        R1["Agile追加"]
+        R2["確率モデル精緻化"]
+        R3["LLM API組込"]
+    end
+    style Done fill:#c8e6c9,stroke:#388E3C
+    style Remain fill:#fff9c4,stroke:#f9a825
+```
+
 ## ロードマップ全体像
 
 ```mermaid
@@ -7,7 +43,7 @@ graph LR
     subgraph Short["短期（1-3ヶ月）"]
         S1["Agile追加"]
         S2["確率モデル精緻化"]
-        S3["感度分析"]
+        S3["パラメータ感度ランキング"]
     end
 
     subgraph Mid["中期（3-6ヶ月）"]
@@ -50,12 +86,12 @@ graph LR
 - **ポアソン過程**: イベント発生のモデル化
 - **相関構造**: プロセス間の依存関係（実験の失敗が仮説修正を誘発する等）
 
-### 3. 感度分析
-パラメータ空間を体系的に探索し、結果のロバスト性を検証する。
+### 3. パラメータ感度ランキング
+モンテカルロ実験は乱数シードの感度を検証したが、モデルパラメータ自体の感度分析はまだ未実施。
 - 入力レート（1.0〜5.0）の変化による影響
 - リソース総量（3.0〜12.0）の変化による影響
-- 乱数シードを変えた100回の反復実験
-- パラメータの感度ランキング
+- AI能力パラメータ（`ai_automatable`, `human_review_needed`）の閾値探索
+- TrustDecayが最適になるAI能力の閾値を特定（[BN残存世界の結果](./Bottleneck-Persists-Analysis.md)から示唆）
 
 ## 中期的な発展
 
@@ -116,3 +152,12 @@ graph LR
 - 資金配分（SBIR、FRO型）の比較
 - 査読システムの代替案（DeSci、MetaROR型）の評価
 - 科学知識生産の長期的ダイナミクス
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [結果の詳細解釈](./Results-Analysis.md) | [論文との対応関係](./Paper-Mapping.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [AI優越世界での課題変化](./AI-Superior-World-Analysis.md)
+- [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)

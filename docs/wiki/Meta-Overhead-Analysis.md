@@ -22,10 +22,10 @@ graph TD
     B -->|"OH=43.3"| RB["Output: 70.3"]
     C -->|"OH=40.7"| RC["Output: 70.7"]
     D -->|"OH=47.8"| RD["Output: 71.5"]
-    E -->|"OH=36.4"| RE["Output: 74.5 🏆"]
+    E -->|"OH=36.4"| RE["Output: 74.5"]
 
-    style E fill:#c8e6c9,stroke:#388E3C,stroke-width:3px
-    style RE fill:#a5d6a7,stroke:#2E7D32,stroke-width:3px
+    style A fill:#c8e6c9,stroke:#388E3C,stroke-width:3px
+    style RA fill:#a5d6a7,stroke:#2E7D32,stroke-width:3px
     style D fill:#ffcdd2,stroke:#d32f2f
     style RD fill:#ef9a9a,stroke:#c62828
 ```
@@ -40,13 +40,15 @@ graph TD
 | D | **MetaAI-Recursive** | 自己参照コスト | AIの最適化強度を上げるほどメタAI自体のコストが増大 |
 | E | **MetaAI-TrustDecay** | 人間要因 | 人的調整コスト削減が信頼・品質を劣化させる |
 
-## 結果
+## 結果（seed=42）
+
+> **重要な注意**: 以下はseed=42の単一シード結果です。[モンテカルロ実験（N=100）](./Monte-Carlo-Analysis.md)により、**TrustDecayが最良という結論はseed=42の偶然であり、統計的にはOracleが最良**であることが判明しています。詳細は下記「モンテカルロ検証による修正」セクションを参照してください。
 
 | バリアント | Output | 管理OH | メタAI OH | 合計OH | 対Baseline |
 |---|---|---|---|---|---|
-| **MetaAI-TrustDecay** | **74.5** | 30.4 | 6.0 | 36.4 | **+46.6%** |
+| MetaAI-TrustDecay | 74.5 | 30.4 | 6.0 | 36.4 | +46.6% |
 | Kanban (固定OH) | 73.4 | 37.0 | 0.0 | 37.0 | +44.2% |
-| MetaAI-Oracle | 72.6 | 29.7 | 5.0 | 34.7 | +42.8% |
+| **MetaAI-Oracle** | **72.6** | 29.7 | 5.0 | 34.7 | +42.8% |
 | MetaAI-Recursive | 71.5 | 33.3 | 14.4 | 47.8 | +40.5% |
 | MetaAI-Delayed | 70.7 | 34.7 | 6.0 | 40.7 | +39.1% |
 | MetaAI-Noisy | 70.3 | 35.3 | 8.0 | 43.3 | +38.2% |
@@ -170,6 +172,48 @@ TrustDecayバリアントが最高成績を出したのは、信頼の「崩壊�
 ### 効率フロンティア
 
 ![効率フロンティア](images/v4_05_meta_efficiency.png)
+
+## モンテカルロ検証による修正
+
+> **[モンテカルロ実験（N=100シード）](./Monte-Carlo-Analysis.md)により、上記seed=42の結論は部分的に覆った。**
+
+### 修正点
+
+```mermaid
+graph LR
+    subgraph WRONG["❌ seed=42 の結論"]
+        W1["TrustDecay最良<br/>74.5"]
+    end
+    subgraph RIGHT["✅ N=100 の結論"]
+        R1["Oracle最良<br/>72.8 (29%勝率)<br/>上位3つは区別不能"]
+    end
+    WRONG ==> RIGHT
+    style WRONG fill:#ffcdd2,stroke:#d32f2f
+    style RIGHT fill:#c8e6c9,stroke:#388E3C
+```
+
+| 項目 | seed=42の結論 | N=100の結論 |
+|---|---|---|
+| 最良バリアント | TrustDecay (74.5) | **Oracle (72.8)** |
+| TrustDecayの順位 | 1位 | **4位**（有意に劣る, p < 0.001） |
+| 上位の構造 | TrustDecay > Oracle | **Oracle ≈ Delayed ≈ Noisy**（区別不能） |
+
+### 課題分析への影響
+
+- **課題4（TrustDecay）の「最も示唆的な結果」は修正が必要**: 「削減→劣化検知→復元」サイクルによる最適バランス発見は、seed=42では機能したが、統計的には**Oracleの慎重な完全情報最適化の方が安定して優れる**
+- **ただし、AIの能力が十分に高い世界（[BN残存世界](./Bottleneck-Persists-Analysis.md)、[AI優越世界](./AI-Superior-World-Analysis.md)）ではTrustDecayが統計的に最良になる**ことも確認された
+- 課題1-3（Recursive、Noisy、Delayed）の分析は概ね妥当。これらが情報論的課題として増幅される点は、AI優越世界で統計的にも確認された
+
+→ 詳細: [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [結果の詳細解釈](./Results-Analysis.md) | [論文との対応関係](./Paper-Mapping.md)
+- [AI優越世界での課題変化](./AI-Superior-World-Analysis.md) | [モンテカルロ実験](./Monte-Carlo-Analysis.md)
+- [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md) | [今後の発展](./Future-Work.md)
 
 ---
 

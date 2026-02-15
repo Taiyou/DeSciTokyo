@@ -234,3 +234,14 @@ graph LR
 | 入力レート | 2.0 / step |
 | 乱数シード | 42（再現性のため固定） |
 | プロセス数 | 6 |
+
+> **注**: 単一シード（seed=42）の結果は[モンテカルロ実験（N=100）](./Monte-Carlo-Analysis.md)により統計的に検証され、一部の結論が修正されています。
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [コードアーキテクチャ](./Architecture.md) | [結果の詳細解釈](./Results-Analysis.md)
+- [論文との対応関係](./Paper-Mapping.md) | [今後の発展](./Future-Work.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [AI優越世界での課題変化](./AI-Superior-World-Analysis.md)
+- [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)

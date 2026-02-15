@@ -168,3 +168,14 @@ mindmap
 | Stage 3の構造変更後に一時的低下→改善 | Section 5: プロセスの枝刈り |
 | Stage 4のメタ最適化が最大の加速を生む | Section 5: メタプロセス再組織化 |
 | 段階的移行が効果的 | Section 5: 4段階フレームワーク |
+
+> **注**: 上記は基本実験（seed=42、3戦略比較）の結果です。メタ最適化（5バリアント）、AI優越世界、モンテカルロ統計検証の結果については、それぞれの専門ページを参照してください。
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [論文との対応関係](./Paper-Mapping.md) | [今後の発展](./Future-Work.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [AI優越世界での課題変化](./AI-Superior-World-Analysis.md)
+- [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)

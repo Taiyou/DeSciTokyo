@@ -61,41 +61,44 @@ if ai_assistance > 0.5 and human_review_needed > 0.3:
 
 AI優越世界ではこのボトルネックが**完全に消滅**する。AIが自己検証できるため、スループットの上限が大幅に引き上がる。
 
-## 結果
+## 結果（seed=42 + モンテカルロ検証済み）
+
+> **注**: seed=42の結果は下記の通り。[モンテカルロ実験（N=100）](./Monte-Carlo-Analysis.md)により、**AI優越世界でのTrustDecayの圧倒的優位は統計的に確認された**（100シード中100シードで1位、p < 0.0001）。一方、現在の世界の最良はOracleに修正された。
 
 ### 数値サマリ
 
 | 指標 | 現在の世界 | AI優越の世界 | 変化 |
 |---|---|---|---|
 | Baseline（管理なし） | 50.9 | 55.0 | +8% |
-| **最良戦略の出力** | **74.5** | **219.7** | **+195%** |
-| 最良戦略 | TrustDecay | TrustDecay | 同じ |
+| **最良戦略の出力** | **74.5 (seed=42)** | **219.7 (seed=42)** | **+195%** |
+| 最良戦略 (seed=42) | TrustDecay | TrustDecay | 同じ |
+| 最良戦略 (MC検証後) | **Oracle** | **TrustDecay** | **異なる** |
 
 ### 全バリアント比較
 
-**現在の世界:**
+**現在の世界（seed=42）:**
 
-| バリアント | Output | 合計OH |
-|---|---|---|
-| MetaAI-TrustDecay | 74.5 | 36.4 |
-| Kanban (Fixed OH) | 73.4 | 37.0 |
-| MetaAI-Oracle | 72.6 | 34.7 |
-| MetaAI-Recursive | 71.5 | 47.8 |
-| MetaAI-Delayed | 70.7 | 40.7 |
-| MetaAI-Noisy | 70.3 | 43.3 |
-| Baseline | 50.9 | 0.0 |
+| バリアント | Output | 合計OH | MC検証後の順位 |
+|---|---|---|---|
+| MetaAI-TrustDecay | 74.5 | 36.4 | 4位 (MC平均: 71.1) |
+| Kanban (Fixed OH) | 73.4 | 37.0 | 6位 (MC平均: 69.6) |
+| **MetaAI-Oracle** | **72.6** | 34.7 | **1位 (MC平均: 72.8)** |
+| MetaAI-Recursive | 71.5 | 47.8 | 5位 (MC平均: 70.9) |
+| MetaAI-Delayed | 70.7 | 40.7 | 2位 (MC平均: 72.3) |
+| MetaAI-Noisy | 70.3 | 43.3 | 3位 (MC平均: 72.2) |
+| Baseline | 50.9 | 0.0 | 7位 (MC平均: 51.1) |
 
-**AI優越の世界:**
+**AI優越の世界（seed=42）:**
 
-| バリアント | Output | 合計OH |
-|---|---|---|
-| **TrustDecay (AI-Sup)** | **219.7** | 35.7 |
-| Oracle (AI-Sup) | 203.8 | 28.7 |
-| Recursive (AI-Sup) | 198.9 | 40.4 |
-| Delayed (AI-Sup) | 190.8 | 40.2 |
-| Noisy (AI-Sup) | 190.2 | 43.6 |
-| Kanban (AI-Sup) | 182.3 | 37.1 |
-| Baseline (AI-Sup) | 55.0 | 0.0 |
+| バリアント | Output | 合計OH | MC検証後の順位 |
+|---|---|---|---|
+| **TrustDecay (AI-Sup)** | **219.7** | 35.7 | **1位 (MC平均: 224.6, 勝率100%)** |
+| Oracle (AI-Sup) | 203.8 | 28.7 | 2位 (MC平均: 195.1) |
+| Recursive (AI-Sup) | 198.9 | 40.4 | 3位 (MC平均: 188.7) |
+| Delayed (AI-Sup) | 190.8 | 40.2 | 4位 (MC平均: 187.9) |
+| Noisy (AI-Sup) | 190.2 | 43.6 | 5位 (MC平均: 187.5) |
+| Kanban (AI-Sup) | 182.3 | 37.1 | 6位 (MC平均: 182.3) |
+| Baseline (AI-Sup) | 55.0 | 0.0 | 7位 (MC平均: 55.8) |
 
 ## 3つの構造的変化
 
@@ -255,6 +258,42 @@ graph LR
 ### 課題の生存率
 
 ![課題の生存率](images/v5_05_challenge_survival.png)
+
+## ボトルネック残存世界: 第3のシナリオ
+
+本ページの分析は「AI能力向上」と「人間レビューボトルネック撤廃」を同時に行う世界を検証した。しかし現実には、**AIが優秀でも組織的・制度的理由から人間レビューが免除できない**ケースが多い。
+
+この問いに答える**ボトルネック残存世界**の実験では、以下が判明した:
+
+```mermaid
+graph LR
+    subgraph 3W["3つの世界の関係"]
+        CW["現在の世界<br/>AI能力: 通常<br/>BN: あり"] -->|"AI能力向上"| BNP["BN残存世界<br/>AI能力: 高い<br/>BN: あり"]
+        BNP -->|"BN撤廃"| SUP["AI優越世界<br/>AI能力: 高い<br/>BN: なし"]
+    end
+    style CW fill:#ffcdd2,stroke:#d32f2f
+    style BNP fill:#fff9c4,stroke:#f9a825
+    style SUP fill:#c8e6c9,stroke:#388E3C
+```
+
+| 世界 | 最良バリアント | TrustDecay勝率 | 平均出力 |
+|---|---|---|---|
+| 現在の世界 | Oracle (29%) | 10% | 72.8 |
+| BN残存世界 | **TrustDecay (95%)** | **95%** | 129.9 |
+| AI優越世界 | **TrustDecay (100%)** | **100%** | 224.6 |
+
+> **TrustDecayの優位はボトルネック撤廃ではなくAI能力の水準で決まる。** AI能力が十分に高ければ、ボトルネックが残っていてもTrustDecayが最適になる。
+
+→ 詳細: [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [結果の詳細解釈](./Results-Analysis.md) | [論文との対応関係](./Paper-Mapping.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [モンテカルロ実験](./Monte-Carlo-Analysis.md)
+- [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md) | [今後の発展](./Future-Work.md)
 
 ---
 

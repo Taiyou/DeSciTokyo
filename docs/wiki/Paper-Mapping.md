@@ -190,3 +190,25 @@ graph LR
 
 - **構造変更の過渡コスト**: Stage 3進入時にスループットが一時的に低下する現象は、論文では明示的に議論されていないが、実務上重要な知見。プロセス再構成には短期的なコストが伴う。
 - **ボトルネックの移動**: TOC+PDCAでReview→Experimentへボトルネックが移動する現象は、単一のTOCサイクルでは不十分であり、複数制約の同時対処が必要であることを示唆。
+
+## 5. 統計的検証が追加した知見
+
+[モンテカルロ実験（N=100シード）](./Monte-Carlo-Analysis.md)により、以下の追加知見が得られた：
+
+| 知見 | 論文への示唆 |
+|------|-----------|
+| 単一シードの結論が覆る危険性 | シミュレーション研究における統計的検証の重要性 |
+| AI能力が閾値を超えると最適戦略が変化 | Section 5の段階的フレームワークの実証的裏付け |
+| ボトルネック撤廃よりAI能力向上の方が先行して効果を発揮 | Section 4.1のAI for Scienceの段階的導入を支持 |
+| 情報論的課題がAI優越世界でむしろ増幅 | Section 3.2の課題はAI進歩で消えないという主張を強化 |
+
+→ 詳細: [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)
+
+---
+
+### 関連ページ
+
+- [Home](./Home.md) | [実験の詳細設計](./Experiment-Design.md) | [コードアーキテクチャ](./Architecture.md)
+- [結果の詳細解釈](./Results-Analysis.md) | [今後の発展](./Future-Work.md)
+- [管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md) | [AI優越世界での課題変化](./AI-Superior-World-Analysis.md)
+- [モンテカルロ実験](./Monte-Carlo-Analysis.md) | [ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)
