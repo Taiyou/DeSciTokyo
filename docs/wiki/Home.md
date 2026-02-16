@@ -121,6 +121,9 @@ xychart-beta
 6. **[管理コスト自体のAI最適化](./Meta-Overhead-Analysis.md)** - AIが管理OHを動的調整する際の5つの課題をシミュレーション検証
 7. **[AI優越世界での課題変化](./AI-Superior-World-Analysis.md)** - AIが人間を上回る場合に課題構造がどう変わるか
 
+### 手法単独比較（v6）
+10. **[Individual Methodology Comparison](./Methodology-Comparison.md)** - Baseline, TOC, PDCA, Agile, Kanban, AI-SciOpsを各手法単独で実施した比較実験
+
 ### 統計的検証（モンテカルロ）
 8. **[モンテカルロ実験](./Monte-Carlo-Analysis.md)** - 100シードによる統計的検証。単一シードの結論が部分的に覆った重要な結果
 9. **[ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)** - AIが優秀でも人間レビューが必須な場合の3世界比較
@@ -139,6 +142,9 @@ python visualize.py           # 可視化生成
 python run_meta_overhead.py   # v4: 管理OH最適化
 python run_ai_superior.py     # v5: AI優越世界
 
+# 手法単独比較
+python run_methodology_comparison.py  # v6: 6手法を単独で比較
+
 # 統計的検証
 python run_monte_carlo.py             # 2世界モンテカルロ (N=100)
 python run_monte_carlo_3worlds.py     # 3世界モンテカルロ (N=100)
@@ -152,6 +158,7 @@ graph LR
     V2 --> V3["v3: 高度な戦略追加"]
     V3 --> V4["v4: メタAI最適化<br/>5バリアント"]
     V4 --> V5["v5: AI優越世界"]
+    V5 --> V6["v6: 手法単独比較<br/>6手法独立実行"]
     V5 --> MC["MC: 統計的検証<br/>N=100 seeds"]
     MC --> W3["3世界比較<br/>BN残存世界"]
 
