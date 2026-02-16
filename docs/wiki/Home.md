@@ -128,6 +128,13 @@ xychart-beta
 8. **[モンテカルロ実験](./Monte-Carlo-Analysis.md)** - 100シードによる統計的検証。単一シードの結論が部分的に覆った重要な結果
 9. **[ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)** - AIが優秀でも人間レビューが必須な場合の3世界比較
 
+### メタサイエンス実験（MS1-MS4）
+11. **[メタサイエンス概要](./Meta-Science-Overview.md)** - 4つのメタサイエンス実験の全体像とアーキテクチャ
+12. **[MS1: 出版バイアスと偽陽性蓄積](./Meta-Science-MS1.md)** - p-hackingが偽陽性率を3.4倍に増加
+13. **[MS2: 再現性危機ダイナミクス](./Meta-Science-MS2.md)** - AI再現ボットが最も効果的（Truth Ratio: 0.870）
+14. **[MS3: 資金配分メカニズム比較](./Meta-Science-MS3.md)** - 4つの資金配分戦略の比較
+15. **[MS4: オープンサイエンス](./Meta-Science-MS4.md)** - 知識ネットワーク効果とフリーライダー問題
+
 ## クイックスタート
 
 ```bash
@@ -148,6 +155,12 @@ python run_methodology_comparison.py  # v6: 6手法を単独で比較
 # 統計的検証
 python run_monte_carlo.py             # 2世界モンテカルロ (N=100)
 python run_monte_carlo_3worlds.py     # 3世界モンテカルロ (N=100)
+
+# メタサイエンス実験
+python run_ms1_publication_bias.py    # MS1: 出版バイアス
+python run_ms2_replication_crisis.py  # MS2: 再現性危機
+python run_ms3_funding_comparison.py  # MS3: 資金配分
+python run_ms4_open_science.py        # MS4: オープンサイエンス
 ```
 
 ## 実験の系譜
@@ -161,9 +174,11 @@ graph LR
     V5 --> V6["v6: 手法単独比較<br/>6手法独立実行"]
     V5 --> MC["MC: 統計的検証<br/>N=100 seeds"]
     MC --> W3["3世界比較<br/>BN残存世界"]
+    W3 --> MS["メタサイエンス<br/>MS1-MS4"]
 
     style V1 fill:#e3f2fd
     style V4 fill:#f3e5f5
     style MC fill:#e8f5e9
     style W3 fill:#fff8e1
+    style MS fill:#fce4ec
 ```

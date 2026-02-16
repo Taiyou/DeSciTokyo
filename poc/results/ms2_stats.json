@@ -1,0 +1,42 @@
+{
+  "Status Quo": {
+    "truth_ratio_mean": 0.6380399772359395,
+    "truth_ratio_std": 0.005717568518663391,
+    "replication_rate_mean": 0.35327909879017516,
+    "replication_rate_std": 0.006270530091045529,
+    "retraction_mean": 3244.63,
+    "retraction_std": 41.78005624697028
+  },
+  "Mandate (10%)": {
+    "truth_ratio_mean": 0.5213282942800318,
+    "truth_ratio_std": 0.005079544813553723,
+    "replication_rate_mean": 0.35329100529100527,
+    "replication_rate_std": 0.016914687698799814,
+    "retraction_mean": 611.14,
+    "retraction_std": 15.984379875365827
+  },
+  "Reward": {
+    "truth_ratio_mean": 0.5099932508617578,
+    "truth_ratio_std": 0.00506190991029615,
+    "replication_rate_mean": 0.35518518518518527,
+    "replication_rate_std": 0.0273079952284777,
+    "retraction_mean": 243.74,
+    "retraction_std": 10.322422196364574
+  },
+  "AI Bot": {
+    "truth_ratio_mean": 0.8697095988112769,
+    "truth_ratio_std": 0.004650821576659822,
+    "replication_rate_mean": 0.3533238892642963,
+    "replication_rate_std": 0.005322809177698696,
+    "retraction_mean": 5570.84,
+    "retraction_std": 43.656092358341006
+  },
+  "Pre-registration": {
+    "truth_ratio_mean": 0.7734019497969008,
+    "truth_ratio_std": 0.005252930666873361,
+    "replication_rate_mean": 0.35373934382777394,
+    "replication_rate_std": 0.005893524692122539,
+    "retraction_mean": 4839.29,
+    "retraction_std": 44.03051101225149
+  }
+}
