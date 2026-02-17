@@ -128,6 +128,10 @@ xychart-beta
 8. **[モンテカルロ実験](./Monte-Carlo-Analysis.md)** - 100シードによる統計的検証。単一シードの結論が部分的に覆った重要な結果
 9. **[ボトルネック残存世界の分析](./Bottleneck-Persists-Analysis.md)** - AIが優秀でも人間レビューが必須な場合の3世界比較
 
+### モデル精緻化・感度分析（v7/v8）
+16. **[確率モデルの精緻化](./Probabilistic-Model-Analysis.md)** - ベータ分布・ポアソン過程・プロセス間相関でモデルを精緻化。ランキング頑健性を確認
+17. **[パラメータ感度分析](./Sensitivity-Analysis.md)** - 4パラメータの系統的スイープ。TrustDecay/Oracle閾値を発見（AI能力~0.65）
+
 ### メタサイエンス実験（MS1-MS4）
 11. **[メタサイエンス概要](./Meta-Science-Overview.md)** - 4つのメタサイエンス実験の全体像とアーキテクチャ
 12. **[MS1: 出版バイアスと偽陽性蓄積](./Meta-Science-MS1.md)** - p-hackingが偽陽性率を3.4倍に増加
@@ -161,6 +165,10 @@ python run_ms1_publication_bias.py    # MS1: 出版バイアス
 python run_ms2_replication_crisis.py  # MS2: 再現性危機
 python run_ms3_funding_comparison.py  # MS3: 資金配分
 python run_ms4_open_science.py        # MS4: オープンサイエンス
+
+# モデル精緻化・感度分析
+python run_probabilistic.py           # v7: 確率モデル精緻化（Beta分布/Poisson/相関）
+python run_sensitivity.py             # v8: パラメータ感度分析
 ```
 
 ## 実験の系譜
@@ -175,10 +183,14 @@ graph LR
     V5 --> MC["MC: 統計的検証<br/>N=100 seeds"]
     MC --> W3["3世界比較<br/>BN残存世界"]
     W3 --> MS["メタサイエンス<br/>MS1-MS4"]
+    MS --> V7["v7: 確率モデル<br/>Beta/Poisson/相関"]
+    MS --> V8["v8: パラメータ感度<br/>4次元スイープ"]
 
     style V1 fill:#e3f2fd
     style V4 fill:#f3e5f5
     style MC fill:#e8f5e9
     style W3 fill:#fff8e1
     style MS fill:#fce4ec
+    style V7 fill:#e0f7fa
+    style V8 fill:#f1f8e9
 ```
