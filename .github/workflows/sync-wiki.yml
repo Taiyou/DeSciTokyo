@@ -2,7 +2,7 @@ name: Sync Wiki
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'claude/**']
     paths:
       - 'docs/wiki/**'
   workflow_dispatch:
@@ -41,8 +41,18 @@ jobs:
           # Remove old content (except .git)
           find /tmp/wiki -maxdepth 1 -not -name '.git' -not -name '.' -exec rm -rf {} + 2>/dev/null || true
 
-          # Copy wiki content
-          cp -r docs/wiki/* /tmp/wiki/
+          # Copy wiki content with link fixes for GitHub wiki format
+          for f in docs/wiki/*.md; do
+            basename=$(basename "$f")
+            # Fix links: ./Foo-Bar.md -> Foo-Bar (GitHub wiki format)
+            sed 's|\./\([A-Za-z0-9_-]*\)\.md|\1|g' "$f" > "/tmp/wiki/$basename"
+          done
+
+          # Copy images
+          if [ -d "docs/wiki/images" ]; then
+            mkdir -p /tmp/wiki/images
+            cp docs/wiki/images/*.png /tmp/wiki/images/ 2>/dev/null || true
+          fi
 
           # Commit and push
           cd /tmp/wiki

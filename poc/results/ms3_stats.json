@@ -1,0 +1,38 @@
+{
+  "Peer Review": {
+    "output_mean": 4916.08054168533,
+    "output_std": 40.82811905329219,
+    "truth_ratio_mean": 0.5064939441870061,
+    "gini_mean": 0.0,
+    "breakthroughs_mean": 1800.54,
+    "breakthroughs_std": 58.98786654897768,
+    "bt_value_mean": 6511.142128191294
+  },
+  "Lottery": {
+    "output_mean": 4911.099891427257,
+    "output_std": 45.11383524713194,
+    "truth_ratio_mean": 0.5079014384749325,
+    "gini_mean": 0.0,
+    "breakthroughs_mean": 1219.16,
+    "breakthroughs_std": 41.45786294540518,
+    "bt_value_mean": 4426.439515141567
+  },
+  "SBIR Staged": {
+    "output_mean": 4941.849061752981,
+    "output_std": 60.59609305074142,
+    "truth_ratio_mean": 0.5064809219458895,
+    "gini_mean": 0.0,
+    "breakthroughs_mean": 1153.32,
+    "breakthroughs_std": 79.66051468575884,
+    "bt_value_mean": 4154.024864944999
+  },
+  "FRO Long-term": {
+    "output_mean": 2243.4062970069076,
+    "output_std": 22.982462775503397,
+    "truth_ratio_mean": 0.5069289888438562,
+    "gini_mean": 0.0,
+    "breakthroughs_mean": 363.08,
+    "breakthroughs_std": 17.763265465561222,
+    "bt_value_mean": 1375.432123154281
+  }
+}
