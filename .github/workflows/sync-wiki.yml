@@ -1,3 +1,21 @@
+# ===========================================================
+# Wiki自動同期ワークフロー
+# ===========================================================
+# docs/wiki/ の内容を GitHub Wiki に自動同期します。
+#
+# 必要な設定:
+#   1. リポジトリ Settings → Secrets and variables → Actions で
+#      WIKI_TOKEN という名前のシークレットを作成
+#   2. 値には Personal Access Token (PAT) を設定
+#      - Settings → Developer settings → Personal access tokens → Fine-grained tokens
+#      - Repository access: このリポジトリを選択
+#      - Permissions: Contents → Read and write
+#   3. リポジトリ Settings → General → Features で Wiki を有効化
+#
+# WIKI_TOKEN が未設定の場合は GITHUB_TOKEN でフォールバックしますが、
+# GITHUB_TOKEN では wiki への push ができない場合があります。
+# ===========================================================
+
 name: Sync Wiki
 
 on:
@@ -16,43 +34,53 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Push docs/wiki to GitHub Wiki
+      - name: Sync docs/wiki to GitHub Wiki
+        env:
+          # WIKI_TOKEN (PAT) を優先、未設定なら GITHUB_TOKEN でフォールバック
+          WIKI_PUSH_TOKEN: ${{ secrets.WIKI_TOKEN || github.token }}
         run: |
+          set -e
+
           # Configure git
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+          WIKI_URL="https://x-access-token:${WIKI_PUSH_TOKEN}@github.com/${{ github.repository }}.wiki.git"
+
           # Clone existing wiki (or init if empty)
-          WIKI_URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git"
           if git clone "$WIKI_URL" /tmp/wiki 2>/dev/null; then
-            echo "Wiki repo cloned"
+            echo "Wiki repo cloned successfully"
           else
-            echo "Wiki repo empty or not accessible, initializing..."
+            echo "Initializing new wiki repo..."
             mkdir -p /tmp/wiki
             cd /tmp/wiki
-            git init
-            git checkout -b master
+            git init -b master
             cd -
           fi
 
-          # Remove old content (except .git)
+          # Remove old content (preserve .git)
           find /tmp/wiki -maxdepth 1 -not -name '.git' -not -name '.' -exec rm -rf {} + 2>/dev/null || true
 
-          # Copy wiki content with link fixes for GitHub wiki format
+          # Copy wiki pages with link fixes for GitHub wiki format
+          PAGE_COUNT=0
           for f in docs/wiki/*.md; do
-            basename=$(basename "$f")
-            # Fix links: ./Foo-Bar.md -> Foo-Bar (GitHub wiki format)
-            sed 's|\./\([A-Za-z0-9_-]*\)\.md|\1|g' "$f" > "/tmp/wiki/$basename"
+            fname=$(basename "$f")
+            # Fix links: ./Foo-Bar.md -> Foo-Bar
+            sed 's|\./\([A-Za-z0-9_-]*\)\.md|\1|g' "$f" > "/tmp/wiki/$fname"
+            PAGE_COUNT=$((PAGE_COUNT + 1))
           done
+          echo "Copied $PAGE_COUNT wiki pages"
 
           # Copy images
+          IMG_COUNT=0
           if [ -d "docs/wiki/images" ]; then
             mkdir -p /tmp/wiki/images
-            cp docs/wiki/images/*.png /tmp/wiki/images/ 2>/dev/null || true
+            for img in docs/wiki/images/*.png; do
+              [ -f "$img" ] && cp "$img" /tmp/wiki/images/ && IMG_COUNT=$((IMG_COUNT + 1))
+            done
           fi
+          echo "Copied $IMG_COUNT images"
 
           # Commit and push
           cd /tmp/wiki
@@ -60,8 +88,15 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to sync"
           else
-            git commit -m "Sync wiki from docs/wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git commit -m "Sync wiki ($PAGE_COUNT pages, $IMG_COUNT images) — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             git remote add origin "$WIKI_URL" 2>/dev/null || git remote set-url origin "$WIKI_URL"
-            git push -u origin master --force
-            echo "Wiki synced successfully!"
+
+            if git push -u origin master --force; then
+              echo "Wiki synced successfully!"
+              echo "View at: https://github.com/${{ github.repository }}/wiki"
+            else
+              echo "::error::Wiki push failed. Please set WIKI_TOKEN secret with a PAT that has Contents read/write permission."
+              echo "See workflow comments for setup instructions."
+              exit 1
+            fi
           fi
