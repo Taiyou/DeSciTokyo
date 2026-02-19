@@ -1,4 +1,4 @@
-# DeSciTokyo
+# SciOps-sim
 
 AI駆動型科学プロセス最適化のPoC実験リポジトリ。論文「Science in the Loop」の主張をシミュレーションで検証します。
 
