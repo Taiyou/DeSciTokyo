@@ -1,0 +1,67 @@
+name: Sync Wiki
+
+on:
+  push:
+    branches: [main, 'claude/**']
+    paths:
+      - 'docs/wiki/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push docs/wiki to GitHub Wiki
+        run: |
+          # Configure git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Clone existing wiki (or init if empty)
+          WIKI_URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git"
+          if git clone "$WIKI_URL" /tmp/wiki 2>/dev/null; then
+            echo "Wiki repo cloned"
+          else
+            echo "Wiki repo empty or not accessible, initializing..."
+            mkdir -p /tmp/wiki
+            cd /tmp/wiki
+            git init
+            git checkout -b master
+            cd -
+          fi
+
+          # Remove old content (except .git)
+          find /tmp/wiki -maxdepth 1 -not -name '.git' -not -name '.' -exec rm -rf {} + 2>/dev/null || true
+
+          # Copy wiki content with link fixes for GitHub wiki format
+          for f in docs/wiki/*.md; do
+            basename=$(basename "$f")
+            # Fix links: ./Foo-Bar.md -> Foo-Bar (GitHub wiki format)
+            sed 's|\./\([A-Za-z0-9_-]*\)\.md|\1|g' "$f" > "/tmp/wiki/$basename"
+          done
+
+          # Copy images
+          if [ -d "docs/wiki/images" ]; then
+            mkdir -p /tmp/wiki/images
+            cp docs/wiki/images/*.png /tmp/wiki/images/ 2>/dev/null || true
+          fi
+
+          # Commit and push
+          cd /tmp/wiki
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+          else
+            git commit -m "Sync wiki from docs/wiki ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git remote add origin "$WIKI_URL" 2>/dev/null || git remote set-url origin "$WIKI_URL"
+            git push -u origin master --force
+            echo "Wiki synced successfully!"
+          fi

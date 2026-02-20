@@ -1,0 +1,42 @@
+{
+  "All Closed": {
+    "output_mean": 5486.376721477553,
+    "output_std": 9.034617548599758,
+    "truth_ratio_mean": 0.5079692694085185,
+    "scoops_mean": 0.0,
+    "boost_mean": 1.0,
+    "knowledge_items_mean": 9363.1
+  },
+  "Mixed": {
+    "output_mean": 5486.230935768253,
+    "output_std": 9.996253142651927,
+    "truth_ratio_mean": 0.5075045339046137,
+    "scoops_mean": 354.1,
+    "boost_mean": 2.0,
+    "knowledge_items_mean": 9009.45
+  },
+  "All Open": {
+    "output_mean": 5486.07485676416,
+    "output_std": 8.493945118539116,
+    "truth_ratio_mean": 0.5077540891442012,
+    "scoops_mean": 961.88,
+    "boost_mean": 2.0,
+    "knowledge_items_mean": 8419.68
+  },
+  "Free-riders": {
+    "output_mean": 5503.969626127438,
+    "output_std": 8.316573988003698,
+    "truth_ratio_mean": 0.5079237028616835,
+    "scoops_mean": 689.06,
+    "boost_mean": 2.0,
+    "knowledge_items_mean": 8673.07
+  },
+  "AI + Open": {
+    "output_mean": 5719.127290309881,
+    "output_std": 9.457893216741525,
+    "truth_ratio_mean": 0.5065976133120632,
+    "scoops_mean": 585.88,
+    "boost_mean": 2.0,
+    "knowledge_items_mean": 8877.25
+  }
+}

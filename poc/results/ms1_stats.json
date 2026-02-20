@@ -1,0 +1,38 @@
+{
+  "No Bias": {
+    "truth_ratio_mean": 0.5002368909875355,
+    "truth_ratio_std": 0.005084645945685455,
+    "truth_ratio_ci95": 0.000996590605354349,
+    "fpr_mean": 0.08056248434724811,
+    "fpr_std": 0.004256039145194166,
+    "total_pubs_mean": 8919.41,
+    "total_pubs_std": 32.59481400468486
+  },
+  "Pub Bias Only": {
+    "truth_ratio_mean": 0.5015113977077137,
+    "truth_ratio_std": 0.005811263947198954,
+    "truth_ratio_ci95": 0.001139007733650995,
+    "fpr_mean": 0.08032279851323844,
+    "fpr_std": 0.004239858393090016,
+    "total_pubs_mean": 9531.41,
+    "total_pubs_std": 20.342612909850104
+  },
+  "Pub Bias + p-hack": {
+    "truth_ratio_mean": 0.5006189064056469,
+    "truth_ratio_std": 0.005475920461325051,
+    "truth_ratio_ci95": 0.00107328041041971,
+    "fpr_mean": 0.27727067296167174,
+    "fpr_std": 0.006177577632008953,
+    "total_pubs_mean": 9550.23,
+    "total_pubs_std": 20.370986721315198
+  },
+  "Full Bias + AI": {
+    "truth_ratio_mean": 0.5009728757224362,
+    "truth_ratio_std": 0.00501557768888059,
+    "truth_ratio_ci95": 0.0009830532270205957,
+    "fpr_mean": 0.27676416799236797,
+    "fpr_std": 0.00609191071115202,
+    "total_pubs_mean": 9695.12,
+    "total_pubs_std": 19.061101751997445
+  }
+}
