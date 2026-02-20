@@ -97,3 +97,11 @@ AI能力 α: 0.0 ─────────────────────
   G. 科学的冗長性             ░░░░░░░░████ → 新規性減衰
   H. ブラックボックス化       ░░░░░░░░░███ → 理解喪失
 ```
+
+## 可視化
+
+### 課題増幅曲線（S2: AI能力連続変化シナリオ）
+![S2: 課題増幅曲線](https://raw.githubusercontent.com/Taiyou/sciops-sim/main/docs/images/S2_alpha_continuous_challenge_amplification.png)
+
+### 品質ドリフト（Goodhart効果）
+![S2: 品質ドリフト](https://raw.githubusercontent.com/Taiyou/sciops-sim/main/docs/images/S2_alpha_continuous_quality_drift.png)

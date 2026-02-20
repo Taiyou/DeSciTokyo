@@ -81,3 +81,16 @@
 | AI-Assisted | 0.10 | 0.15 | 0.05 | 〜95 | 0.49 |
 | AI-SciOps | 0.10 | 0.20 | 0.05 | 〜117 | 0.43 |
 | Oracle | 0.05 | 0.30 | 0.02 | 〜368 | 0.28 |
+
+---
+
+## 戦略比較の可視化
+
+### 戦略別出力比較（α=0、管理能力のみの比較）
+![S1: 戦略比較](https://raw.githubusercontent.com/Taiyou/sciops-sim/main/docs/images/S1_baseline_strategy_comparison_a0.png)
+
+### α-戦略ヒートマップ（AI能力の効果）
+![S2: α-戦略ヒートマップ](https://raw.githubusercontent.com/Taiyou/sciops-sim/main/docs/images/S2_alpha_continuous_alpha_heatmap.png)
+
+### 相転移ダイアグラム
+![S2: 相転移ダイアグラム](https://raw.githubusercontent.com/Taiyou/sciops-sim/main/docs/images/S2_alpha_continuous_phase_diagram.png)

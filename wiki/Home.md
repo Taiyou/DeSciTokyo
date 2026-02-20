@@ -19,6 +19,10 @@ SciOps-Sim は、科学研究のプロセス（Survey → Hypothesis → Experim
 - **76,800回** のSobol感度分析
 - **26枚** の可視化プロット
 
+### 主要結果
+![S2: 相転移ダイアグラム](https://raw.githubusercontent.com/Taiyou/sciops-sim/main/docs/images/S2_alpha_continuous_phase_diagram.png)
+*α ≈ 0.55 で AI-Assisted が Kanban を追い越す相転移が確認された*
+
 ---
 
 ## Wiki 目次

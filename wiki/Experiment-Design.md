@@ -53,6 +53,9 @@
 - 各点で10シード → 合計 **76,800回** のシミュレーション
 - Sobol 一次指数（S1）と総合指数（ST）を計算
 
+### Sobol 感度分析結果
+![Sobol トルネードチャート](https://raw.githubusercontent.com/Taiyou/sciops-sim/main/docs/images/sobol_tornado.png)
+
 ## 並列実行
 
 - **バックエンド**: joblib (loky)
