@@ -1,0 +1,56 @@
+# SciOps-Sim Default Configuration
+# This YAML defines the default pipeline parameters.
+# Override these values by creating scenario-specific configs.
+
+stages:
+  - name: Survey
+    base_throughput: 2.0
+    uncertainty: 0.2
+    failure_rate: 0.05
+    ai_automatable: 0.8
+    human_review_needed: 0.2
+
+  - name: Hypothesis
+    base_throughput: 1.5
+    uncertainty: 0.4
+    failure_rate: 0.1
+    ai_automatable: 0.6
+    human_review_needed: 0.5
+
+  - name: Experiment
+    base_throughput: 0.8
+    uncertainty: 0.5
+    failure_rate: 0.15
+    ai_automatable: 0.3
+    human_review_needed: 0.3
+
+  - name: Analysis
+    base_throughput: 1.8
+    uncertainty: 0.3
+    failure_rate: 0.08
+    ai_automatable: 0.9
+    human_review_needed: 0.4
+
+  - name: Writing
+    base_throughput: 1.2
+    uncertainty: 0.3
+    failure_rate: 0.05
+    ai_automatable: 0.7
+    human_review_needed: 0.6
+
+  - name: Review
+    base_throughput: 0.6
+    uncertainty: 0.2
+    failure_rate: 0.1
+    ai_automatable: 0.4
+    human_review_needed: 0.8
+
+feedback:
+  enable_feedback: true
+  p_revision: 0.2
+  p_minor_revision: 0.15
+  p_major_rejection: 0.05
+  max_loops: 5
+
+arrival_rate: 3.0
+total_resources: 10.0
